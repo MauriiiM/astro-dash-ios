@@ -1,5 +1,5 @@
 //
-//  GameScene.swift
+//  MainScene.swift
 //  Space Game
 //
 //  Created by Mauricio Monsivais on 11/21/16.
@@ -7,10 +7,10 @@
 //
 
 import Foundation
+import SpriteKit
 
-class GameScene
+
+class MainScene: SKScene
 {
-    var gameHeight: Float = 555
-    
     
 }
