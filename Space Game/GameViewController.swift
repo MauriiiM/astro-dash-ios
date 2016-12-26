@@ -12,12 +12,22 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    var gameHeight: Float = 555
+
+    
+//    weak var gameView: GameView! {
+//        didSet{
+//            gameView.addGestureRecognizer(UISwipeGestureRecognizer(
+//                target: gameView, action: #selector(UFO.moveUFO()))
+//        }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
-        if let scene = GKScene(fileNamed: "GameScene") {
+        if let scene = GKScene(fileNamed: "GameSceneO") {
             
             // Get the SKScene from the loaded GKScene
             if let sceneNode = scene.rootNode as! GameSceneO? {
@@ -39,7 +49,7 @@ class GameViewController: UIViewController {
                     view.showsNodeCount = true
                 }
             }
-        }
+        }        
         print("viewDidLoad() finished in GameViewController")
     }
 
