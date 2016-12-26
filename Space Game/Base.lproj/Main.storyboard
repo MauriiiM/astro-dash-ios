@@ -179,20 +179,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="qTy-dW-skz">
-                                <rect key="frame" x="53" y="211" width="268" height="101"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="qTy-dW-skz">
+                                <rect key="frame" x="20" y="160.5" width="334" height="126.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="mhm">
                                         <attributes>
                                             <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" metaFont="system" size="43"/>
+                                            <font key="NSFont" size="55" name="GillSans"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" Entertainment">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" metaFont="system" size="43"/>
+                                            <font key="NSFont" size="55" name="GillSans"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -200,7 +200,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93680316209793091" green="0.71135127544403076" blue="0.78213793039321899" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qTy-dW-skz" firstAttribute="leading" secondItem="INa-3b-tQf" secondAttribute="leading" constant="20" symbolic="YES" id="Cmj-c1-Cwx"/>
                             <constraint firstAttribute="centerX" secondItem="qTy-dW-skz" secondAttribute="centerX" id="RzY-Xy-RB4"/>
@@ -211,12 +211,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="BV1-FR-VrT" kind="show" id="QTp-TC-f66"/>
+                        <segue destination="BV1-FR-VrT" kind="show" identifier="goToMain" id="QTp-TC-f66"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqY-C6-J1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="-563"/>
+            <point key="canvasLocation" x="140" y="-569"/>
         </scene>
     </scenes>
     <resources>
