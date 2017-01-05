@@ -7,17 +7,20 @@
 //
 
 import SpriteKit
+import GameKit
 
 class GameScene: SKScene {
     
     var hasBeenCreated = false
-    var background, backgroundClouds, asteroid1, asteroid2, comet, spaceship: SKSpriteNode?
-    
+    var entities = [GKEntity]()
+    private var background, backgroundClouds, asteroid1, asteroid2, comet, playerSprite: SKSpriteNode!
+
+
     
     //called automatically after scene gets created
     override func didMove(to view: SKView) {
         if(!self.hasBeenCreated){
-            loadAssets()
+            setAssets()
             createContent()
             self.hasBeenCreated = true
             print("game scene has been created")
@@ -25,24 +28,24 @@ class GameScene: SKScene {
     }
     
     private func createContent(){
+        playerSprite.position = CGPoint(x: frame.size.width / 2, y: 140)
+        self.addChild(backgroundClouds)
+        self.addChild(playerSprite)
     }
     
-    private func loadAssets(){
-        background = SKSpriteNode(imageNamed: "Background")
-        backgroundClouds = SKSpriteNode(imageNamed: "Background_clouds")
-        asteroid1 = SKSpriteNode(imageNamed: "Asteroid1")
-        asteroid2 = SKSpriteNode(imageNamed: "Asteroid2")
-        comet = SKSpriteNode(imageNamed: "Comet")
-        spaceship = SKSpriteNode(imageNamed: "Spaceship")
-        print("load() finished in GameScene")
+    private func setAssets(){
+        backgroundClouds = Assets.backgroundClouds
+        backgroundClouds.position = CGPoint(x: frame.size.width / 2, y: frame.size.height/2)
+        backgroundClouds.scale(to: CGSize(width: self.size.width, height: self.size.height))
+        playerSprite = Assets.playerSprite
+        playerSprite.scale(to: CGSize(width: 87, height: 87))
     }
-    
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
 }

@@ -6,8 +6,8 @@
 //  Copyright © 2016 mhm Entertainment. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
 
-class UFO{
-    
+class Spaceship: SKSpriteNode{
+   
 }

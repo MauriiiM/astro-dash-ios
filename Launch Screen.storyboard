@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dcA-vr-mtL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="6ds-bi-Exq">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7P-nl-6T9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="dcA-vr-mtL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4fR-Q3-uhU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z66-U2-GAt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qqT-TT-LQY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_clouds" translatesAutoresizingMaskIntoConstraints="NO" id="Z4B-gC-BQq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2017 mhm Entertainment. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Fct-iK-Ftj" userLabel="Copyright © 2016 mhm Entertainment. All rights reserved.">
+                                <rect key="frame" x="20" y="626" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yjJ-th-zRb">
+                                <rect key="frame" x="20" y="160" width="334" height="126.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="mhm">
+                                        <attributes>
+                                            <color key="NSColor" red="0.43295720219612122" green="0.72023999691009521" blue="0.78436774015426636" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="55" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" Entertainment">
+                                        <attributes>
+                                            <color key="NSColor" red="0.18422715365886688" green="0.44030871987342834" blue="0.38439434766769409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="55" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Fct-iK-Ftj" secondAttribute="centerX" id="HfM-tI-Wzd"/>
+                            <constraint firstAttribute="bottom" secondItem="Fct-iK-Ftj" secondAttribute="bottom" constant="20" id="IKa-uf-8tg"/>
+                            <constraint firstItem="Z4B-gC-BQq" firstAttribute="top" secondItem="qqT-TT-LQY" secondAttribute="top" id="Jd2-JJ-4Md"/>
+                            <constraint firstItem="yjJ-th-zRb" firstAttribute="centerX" secondItem="Z4B-gC-BQq" secondAttribute="centerX" id="KZl-S6-lfv"/>
+                            <constraint firstItem="yjJ-th-zRb" firstAttribute="top" secondItem="4fR-Q3-uhU" secondAttribute="bottom" constant="140" id="T3W-PR-rdW"/>
+                            <constraint firstItem="yjJ-th-zRb" firstAttribute="leading" secondItem="Fct-iK-Ftj" secondAttribute="leading" id="VAW-3s-8Fq"/>
+                            <constraint firstItem="Z4B-gC-BQq" firstAttribute="leading" secondItem="qqT-TT-LQY" secondAttribute="leading" id="ayJ-65-FGE"/>
+                            <constraint firstItem="Fct-iK-Ftj" firstAttribute="leading" secondItem="qqT-TT-LQY" secondAttribute="leading" constant="20" symbolic="YES" id="kxK-fg-jFv"/>
+                            <constraint firstItem="yjJ-th-zRb" firstAttribute="centerX" secondItem="Fct-iK-Ftj" secondAttribute="centerX" id="rJI-6e-SpX"/>
+                            <constraint firstItem="Z4B-gC-BQq" firstAttribute="bottom" secondItem="Z66-U2-GAt" secondAttribute="top" id="xLU-bu-370"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-5908" y="-1869"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background_clouds" width="1536" height="3840"/>
+    </resources>
+</document>
