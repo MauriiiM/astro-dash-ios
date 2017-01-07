@@ -9,13 +9,20 @@
 import SpriteKit
 import GameKit
 
+
 class GameScene: SKScene {
     
-    var hasBeenCreated = false
     var entities = [GKEntity]()
-    private var background, backgroundClouds, asteroid1, asteroid2, comet, playerSprite: SKSpriteNode!
-
-
+    fileprivate var hasBeenCreated = false
+    fileprivate var lastUpdateTimeInterval: CFTimeInterval = 0
+    fileprivate var background, asteroid1, asteroid2, comet: SKSpriteNode!
+    fileprivate var playerSprite: PlayerSprite!
+    
+    enum gameState{
+        case ready
+        case running
+        case paused
+    }
     
     //called automatically after scene gets created
     override func didMove(to view: SKView) {
@@ -27,25 +34,37 @@ class GameScene: SKScene {
         }
     }
     
-    private func createContent(){
+    func handlePanGesture(_ recognizer: UIPanGestureRecognizer){
+        // if (recognizer.direction == .left) {print("swiped left")}
+        // else if (recognizer.direction == .right) {print("swiped right ")}
+        
+        if recognizer.state == UIGestureRecognizerState.ended {
+            let panVelocity = recognizer.velocity(in: self.view)
+            if (abs(panVelocity.x/4) < 200) {playerSprite.panVelocity = panVelocity.x/5}
+            print(playerSprite.panVelocity)
+        }
+    }
+    
+    fileprivate func createContent(){
         playerSprite.position = CGPoint(x: frame.size.width / 2, y: 140)
-        self.addChild(backgroundClouds)
+        self.addChild(background)
         self.addChild(playerSprite)
     }
     
-    private func setAssets(){
-        backgroundClouds = Assets.backgroundClouds
-        backgroundClouds.position = CGPoint(x: frame.size.width / 2, y: frame.size.height/2)
-        backgroundClouds.scale(to: CGSize(width: self.size.width, height: self.size.height))
-        playerSprite = Assets.playerSprite
+    fileprivate func setAssets(){
+        background = Assets.backgroundClouds
+        background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height/2)
+        background.scale(to: CGSize(width: self.size.width, height: self.size.height))
+        playerSprite = Assets.playerSprite as! PlayerSprite!
         playerSprite.scale(to: CGSize(width: 87, height: 87))
     }
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
     
+    override func update(_ currentTime: TimeInterval) {
+        var dt: TimeInterval = currentTime - lastUpdateTimeInterval
+        lastUpdateTimeInterval = currentTime
+        if dt > 1.0 { dt = 1.0 }
+        
+        playerSprite.update()
+        //        objectHandler.update
+    }
 }

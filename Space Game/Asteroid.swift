@@ -10,6 +10,17 @@ import SpriteKit
 
 class Asteroid: SKSpriteNode {
 
-    
-    
+    enum asteroidType {
+        case asteroid1
+        case asteroid2
+        case comet
+        
+        static var size: CGSize {
+            return CGSize(width: 0, height: 0)
+        }
+        
+        static var name: String {
+            return "asteroid"
+        }
+    }
 }
