@@ -12,7 +12,7 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
-    let gameHeight:CGFloat = 555
+    let gameHeight: CGFloat = 555
     var gameWidth: CGFloat?
     
     override func viewDidLoad() {
@@ -36,8 +36,6 @@ class GameViewController: UIViewController {
                     skView.showsPhysics = false
                     skView.showsNodeCount = true
                     skView.addGestureRecognizer(panGest)
-                    // skView.addGestureRecognizer(leftSwipe)
-                    // skView.addGestureRecognizer(rightSwipe)
                     gameSceneNode.anchorPoint = CGPoint(x: 0, y: 0)
                     gameSceneNode.size = CGSize(width: skView.frame.size.width/(skView.frame.size.height/gameHeight), height: gameHeight)
                     skView.presentScene(gameSceneNode)

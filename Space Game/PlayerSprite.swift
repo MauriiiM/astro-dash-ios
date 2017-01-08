@@ -11,6 +11,10 @@ import SpriteKit
 class PlayerSprite: SKSpriteNode {
     
     let yLocation = 140.0
+//    override var size: CGSize{
+//        set{}
+//        get{return CGSize(width: 87.0, height: 87.0)}
+//    }
     var panVelocity: CGFloat = 0
 
     

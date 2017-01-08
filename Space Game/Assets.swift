@@ -10,21 +10,21 @@ import SpriteKit
 
 class Assets{
    
-    static var background, backgroundClouds, backdrop, asteroid1, asteroid2, comet, playerSprite: SKSpriteNode!
+    static var background, backgroundClouds, backdrop, asteroid1, asteroid2, comet, greenUFO: SKTexture!
 
 
     static func loadGameAssets(){
-        asteroid1 = SKSpriteNode(imageNamed: "asteroid1")
-        asteroid2 = SKSpriteNode(imageNamed: "asteroid2")
-        comet = SKSpriteNode(imageNamed: "comet")
-        playerSprite = Spaceship(imageNamed: "spaceship")
+        asteroid1 = SKTexture(imageNamed: "asteroid1")
+        asteroid2 = SKTexture(imageNamed: "asteroid2")
+        comet = SKTexture(imageNamed: "comet")
+        greenUFO = SKTexture(imageNamed: "greenUFO")
         print("game assets loaded")
     }
     
     static func loadMenuAssets(){
-        background = SKSpriteNode(imageNamed: "background")
-        backgroundClouds = SKSpriteNode(imageNamed: "background_clouds")
-        backdrop = SKSpriteNode(imageNamed: "backdrop")
+        background = SKTexture(imageNamed: "background")
+        backgroundClouds = SKTexture(imageNamed: "background_clouds")
+        backdrop = SKTexture(imageNamed: "backdrop")
         print("menu assets loaded")
     }
 }
