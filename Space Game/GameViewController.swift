@@ -17,18 +17,17 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if (Assets.DEBUG == true)
+        {
+            Assets.loadMenuAssets()
+            Assets.loadGameAssets()
+        }
         if let gameScene = GKScene(fileNamed: "GameScene"){
             if let gameSceneNode = gameScene.rootNode as! GameScene?{
                 // gameSceneNode.scaleMode = .aspectFill
-                gameSceneNode.entities = gameScene.entities
-                
+                //gameSceneNode.entities = gameScene.entities
                 let panGest = UIPanGestureRecognizer(target: gameSceneNode, action: #selector (gameSceneNode.handlePanGesture))
-                // let leftSwipe = UISwipeGestureRecognizer(target: gameSceneNode, action: #selector (gameSceneNode.movePlayerSprite))
-                // leftSwipe.direction = .left
-                // let rightSwipe = UISwipeGestureRecognizer(target: gameSceneNode, action: #selector (gameSceneNode.movePlayerSprite))
-                // rightSwipe.direction = .right
-                // Present the scene
+                
                 if let skView = self.view as! SKView?{
                     panGest.velocity(in: skView)
                     
@@ -37,7 +36,7 @@ class GameViewController: UIViewController {
                     skView.showsNodeCount = true
                     skView.addGestureRecognizer(panGest)
                     gameSceneNode.anchorPoint = CGPoint(x: 0, y: 0)
-                    gameSceneNode.size = CGSize(width: skView.frame.size.width/(skView.frame.size.height/gameHeight), height: gameHeight)
+//                    gameSceneNode.size = CGSize(width: skView.frame.size.width/(skView.frame.size.height/gameHeight), height: gameHeight)
                     skView.presentScene(gameSceneNode)
                 }
             }

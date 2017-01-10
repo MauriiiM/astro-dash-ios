@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		220D8D191E1BB55700AC46FE /* Asteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220D8D181E1BB55700AC46FE /* Asteroid.swift */; };
-		220D8D1B1E1BB5C900AC46FE /* ObjectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220D8D1A1E1BB5C900AC46FE /* ObjectHandler.swift */; };
 		224880571E10CB14003E732E /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224880561E10CB14003E732E /* MainMenuViewController.swift */; };
 		224880591E10CB34003E732E /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224880581E10CB34003E732E /* EndGameViewController.swift */; };
 		224880651E160AEF003E732E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224880641E160AEF003E732E /* MainMenuView.swift */; };
@@ -45,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		220D8D181E1BB55700AC46FE /* Asteroid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asteroid.swift; sourceTree = "<group>"; };
-		220D8D1A1E1BB5C900AC46FE /* ObjectHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectHandler.swift; sourceTree = "<group>"; };
 		224880561E10CB14003E732E /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		224880581E10CB34003E732E /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 		224880641E160AEF003E732E /* MainMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainMenuView.swift; path = ../MainMenuView.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				220D8D181E1BB55700AC46FE /* Asteroid.swift */,
-				220D8D1A1E1BB5C900AC46FE /* ObjectHandler.swift */,
 				22E432861E20B37E00E22BF4 /* PlayerSprite.swift */,
 			);
 			name = gameobject;
@@ -107,6 +104,7 @@
 		2248806C1E17A64B003E732E /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				22EE2EF11DDC0D99003188BD /* Assets.xcassets */,
 				22EE2EF61DDC0D99003188BD /* Info.plist */,
 			);
 			name = "supporting files";
@@ -184,7 +182,6 @@
 				22EE2EEE1DDC0D99003188BD /* Main.storyboard */,
 				22EE2EE41DDC0D99003188BD /* AppDelegate.swift */,
 				226A97B21E1DDF6A0096515A /* Assets.swift */,
-				22EE2EF11DDC0D99003188BD /* Assets.xcassets */,
 				22D45E5B1E02582F0092C5FD /* launchview */,
 				22D45E561E0239AB0092C5FD /* mainmenuview */,
 				22D45E571E0239C60092C5FD /* gameview */,
@@ -361,7 +358,6 @@
 				224880591E10CB34003E732E /* EndGameViewController.swift in Sources */,
 				226A97B31E1DDF6A0096515A /* Assets.swift in Sources */,
 				220D8D191E1BB55700AC46FE /* Asteroid.swift in Sources */,
-				220D8D1B1E1BB5C900AC46FE /* ObjectHandler.swift in Sources */,
 				22E432871E20B37E00E22BF4 /* PlayerSprite.swift in Sources */,
 				2248806B1E1612C3003E732E /* GameScene.swift in Sources */,
 			);

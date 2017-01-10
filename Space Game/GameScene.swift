@@ -32,7 +32,7 @@ class GameScene: SKScene {
         if recognizer.state == UIGestureRecognizerState.ended {
             let panVelocity = recognizer.velocity(in: self.view)
             if (abs(panVelocity.x/5) < 200) {playerSprite.panVelocity = panVelocity.x/5}
-            print("ufo.x=\(playerSprite.position.x) screenWidth=\(frame.size.width)")
+            print("pan velocity=\(playerSprite.position.x/5)")
         }
     }
     
@@ -40,19 +40,21 @@ class GameScene: SKScene {
         self.addChild(background)
         self.addChild(playerSprite)
         self.addChild(asteroid1)
+//        self.addChild(asteroid2)
+//        self.addChild(asteroid3)
     }
     
     fileprivate func setAssets(){
         background = SKSpriteNode(texture: Assets.backgroundClouds)
         playerSprite = PlayerSprite(texture: Assets.greenUFO)
-        asteroid1 = Asteroid()
-        asteroid2 = Asteroid()
-        asteroid3 = Asteroid()
+        asteroid1 = Asteroid(sceneWidth: self.frame.width, sceneHeight: self.frame.height)
+        asteroid2 = Asteroid(sceneWidth: self.frame.width, sceneHeight: self.frame.height)
+        asteroid3 = Asteroid(sceneWidth: self.frame.width, sceneHeight: self.frame.height)
         
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height/2)
         background.scale(to: CGSize(width: self.size.width, height: self.size.height))
-        playerSprite.position = CGPoint(x: self.size.width / 2, y: 140)
-//        playerSprite.scale(to: CGSize(width: 87.0, height: 87.0))
+        playerSprite.position = CGPoint(x: self.size.width / 2, y: 100)
+        playerSprite.scale(to: CGSize(width: 87.0, height: 87.0))
         
     }
     
@@ -61,8 +63,10 @@ class GameScene: SKScene {
         lastUpdateTimeInterval = currentTime
         if dt > 1.0 { dt = 1.0 }
         
-//        playerSprite.update()
-        //        objectHandler.update
+        playerSprite.update()
+        asteroid1.update(deltaTime: dt)
+        asteroid2.update(deltaTime: dt)
+        asteroid3.update(deltaTime: dt)
     }
     
     //called automatically after scene gets created

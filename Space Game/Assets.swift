@@ -11,7 +11,7 @@ import SpriteKit
 class Assets{
    
     static var background, backgroundClouds, backdrop, asteroid1, asteroid2, comet, greenUFO: SKTexture!
-
+    static let DEBUG = true
 
     static func loadGameAssets(){
         asteroid1 = SKTexture(imageNamed: "asteroid1")

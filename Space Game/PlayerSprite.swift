@@ -20,8 +20,9 @@ class PlayerSprite: SKSpriteNode {
     
     func update(){
         self.position = CGPoint(x: Double(self.position.x + panVelocity), y: yLocation)
-        panVelocity /= 1.3
-        //        self.position += CGPoint(x:velocity.x, y: yLocation)
+        panVelocity /= 1.4
+        if(self.position.x < 0){ self.position.x = (self.parent?.frame.width)! }
+        if(self.position.x > (self.parent?.frame.width)!){ self.position.x = 0 }
         
     }
     
