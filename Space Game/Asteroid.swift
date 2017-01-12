@@ -10,54 +10,63 @@ import SpriteKit
 
 class Asteroid: SKSpriteNode {
     
-    fileprivate var parentWidth, parentHeight: CGFloat!
+    var scrollSpeed: CGFloat = -10
+    fileprivate var _gameLevel: Int?
     fileprivate var randomX: CGFloat{
-        return CGFloat(arc4random_uniform(UInt32(parentWidth + self.size.width))) - CGFloat(self.size.width/2)
+        if let parentWidth = self.parent?.scene?.frame.width{
+            return CGFloat(arc4random_uniform(UInt32(parentWidth + self.size.width))) - CGFloat(self.size.width/2)
+        }
+        return -10
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(sceneWidth parentWidth: CGFloat, sceneHeight parentHeight: CGFloat){
-        super.init(texture: Assets.asteroid1, color: UIColor.clear, size: CGSize(width:parentWidth/3.5, height: parentWidth/3.5))
-        self.parentWidth = parentWidth
-        self.parentHeight = parentHeight
-        self.anchorPoint = CGPoint(x: 0, y: 0)
-        self.position = CGPoint(x: randomX, y: parentHeight-self.size.height) //self.parent?.frame.width
+    init(at spawnPosition: CGPoint){
+        super.init(texture: Assets.asteroid1, color: UIColor.clear, size: Assets.asteroid1.size())
         
-        //        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: (self.texture?.size())!)
-        //        self.physicsBody!.affectedByGravity = true
-        //        self.parent? = CGVector(dx: 0, dy: -9.8)
+        self.anchorPoint = CGPoint(x: 0, y: 0)//CAUTION: changing the anchorpoint will break all calculations!
+        self.position = CGPoint(x: spawnPosition.x, y: spawnPosition.y)
+        
+        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: (self.size))
+        self.physicsBody?.affectedByGravity = true
+        self.physicsBody?.isDynamic = false
     }
     
-    func resetToTop(){
-        self.size = CGSize(width: CGFloat(arc4random_uniform(UInt32(parentWidth + self.size.width))),
-                           height: CGFloat(arc4random_uniform(UInt32(parentWidth + self.size.width))))
+    static func chooseTexture(currentLevel: Int)-> SKTexture{
+        var texture: SKTexture!
+        switch currentLevel {
+        case 1:
+            texture = Assets.asteroid1
+        case 2:
+            texture = Assets.getAsteroid(number: arc4random_uniform(2))
+        case 3, 4:
+            texture = Assets.comet
+        case 5:
+            texture = Assets.getAsteroid(number: arc4random_uniform(2))
+        case 6:
+            texture = Assets.getAsteroid(number: arc4random_uniform(3))
+        default:
+            texture = Assets.asteroid1
+            break
+        }
+        return texture
+    }
+    
+    func reset(to newPosition: CGPoint, size newSize: CGSize, texture: SKTexture){
+        self.size = newSize
+        self.position = CGPoint(x: newPosition.x, y: newPosition.y)
+        self.texture = texture
         
-        self.position = CGPoint(x: randomX, y: parentHeight + self.size.height)
-        
-        
+        if(size.width < (parent?.frame.width)!/3.9)
+        {
+            
+        }
     }
     
     func update(deltaTime dt: TimeInterval){
-        if(self.position.y - self.frame.height < 0)
-        {
-            resetToTop()
-        }
-    }
-}
-
-enum asteroidType {
-    case asteroid1
-    case asteroid2
-    case comet
-    
-    static var size: CGSize {
-        return CGSize(width: 0, height: 0)
-    }
-    
-    static var name: String {
-        return "asteroid"
+        self.position.y.add(scrollSpeed)
+        print("asteroid x = \(self.position.x)")
     }
 }

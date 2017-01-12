@@ -11,15 +11,11 @@ import SpriteKit
 class PlayerSprite: SKSpriteNode {
     
     let yLocation = 140.0
-//    override var size: CGSize{
-//        set{}
-//        get{return CGSize(width: 87.0, height: 87.0)}
-//    }
     var panVelocity: CGFloat = 0
-
+    var vel = GLKVector2(v: (0,0))
     
     func update(){
-        self.position = CGPoint(x: Double(self.position.x + panVelocity), y: yLocation)
+        self.position.x += panVelocity
         panVelocity /= 1.4
         if(self.position.x < 0){ self.position.x = (self.parent?.frame.width)! }
         if(self.position.x > (self.parent?.frame.width)!){ self.position.x = 0 }

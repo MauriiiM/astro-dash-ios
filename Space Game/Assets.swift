@@ -9,7 +9,6 @@
 import SpriteKit
 
 class Assets{
-   
     static var background, backgroundClouds, backdrop, asteroid1, asteroid2, comet, greenUFO: SKTexture!
     static let DEBUG = true
 
@@ -26,5 +25,18 @@ class Assets{
         backgroundClouds = SKTexture(imageNamed: "background_clouds")
         backdrop = SKTexture(imageNamed: "backdrop")
         print("menu assets loaded")
+    }
+    
+    static func getAsteroid(number: UInt32)->SKTexture{
+        switch number {
+        case 0:
+            return asteroid1
+        case 1:
+            return asteroid2
+        case 2:
+            return comet
+        default:
+            return asteroid1
+        }
     }
 }

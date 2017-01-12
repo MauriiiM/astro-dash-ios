@@ -13,6 +13,7 @@ import GameKit
 class GameScene: SKScene {
     
     var entities = [GKEntity]()
+    fileprivate let asteroidSpawnGap: CGFloat = 255
     fileprivate var hasBeenCreated = false
     fileprivate var lastUpdateTimeInterval: CFTimeInterval = 0
     fileprivate var background: SKSpriteNode!
@@ -22,7 +23,6 @@ class GameScene: SKScene {
     enum gameState{
         case ready
         case running
-        case paused
     }
     
     func handlePanGesture(_ recognizer: UIPanGestureRecognizer){
@@ -31,8 +31,8 @@ class GameScene: SKScene {
         
         if recognizer.state == UIGestureRecognizerState.ended {
             let panVelocity = recognizer.velocity(in: self.view)
-            if (abs(panVelocity.x/5) < 200) {playerSprite.panVelocity = panVelocity.x/5}
-            print("pan velocity=\(playerSprite.position.x/5)")
+            if (abs(panVelocity.x/3.7) < 190) {playerSprite.panVelocity = panVelocity.x/3.7}
+            print("panVelocity = \(playerSprite.position.x)")
         }
     }
     
@@ -40,16 +40,19 @@ class GameScene: SKScene {
         self.addChild(background)
         self.addChild(playerSprite)
         self.addChild(asteroid1)
-//        self.addChild(asteroid2)
-//        self.addChild(asteroid3)
+        self.addChild(asteroid2)
+        self.addChild(asteroid3)
     }
     
     fileprivate func setAssets(){
         background = SKSpriteNode(texture: Assets.backgroundClouds)
         playerSprite = PlayerSprite(texture: Assets.greenUFO)
-        asteroid1 = Asteroid(sceneWidth: self.frame.width, sceneHeight: self.frame.height)
-        asteroid2 = Asteroid(sceneWidth: self.frame.width, sceneHeight: self.frame.height)
-        asteroid3 = Asteroid(sceneWidth: self.frame.width, sceneHeight: self.frame.height)
+        var asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width/2)
+        asteroid1 = Asteroid(at: CGPoint(x : asteroidSpawnX, y: self.frame.height))
+        asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width/2)
+        asteroid2 = Asteroid(at: CGPoint(x : asteroidSpawnX, y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap))
+        asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width/2)
+        asteroid3 = Asteroid(at: CGPoint(x : asteroidSpawnX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap))
         
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height/2)
         background.scale(to: CGSize(width: self.size.width, height: self.size.height))
@@ -58,15 +61,40 @@ class GameScene: SKScene {
         
     }
     
+    fileprivate func setupPhysics(){
+        physicsWorld.gravity = CGVector(dx: 0, dy: 0.5)
+    }
+    
     override func update(_ currentTime: TimeInterval) {
-        var dt: TimeInterval = currentTime - lastUpdateTimeInterval
-        lastUpdateTimeInterval = currentTime
-        if dt > 1.0 { dt = 1.0 }
-        
-        playerSprite.update()
-        asteroid1.update(deltaTime: dt)
-        asteroid2.update(deltaTime: dt)
-        asteroid3.update(deltaTime: dt)
+        if(!(parent?.isPaused)!){
+            var dt: TimeInterval = currentTime - lastUpdateTimeInterval
+            lastUpdateTimeInterval = currentTime
+            if dt > 1.0 { dt = 1.0 }
+            
+            playerSprite.update()
+            asteroid1.update(deltaTime: dt)
+            asteroid2.update(deltaTime: dt)
+            asteroid3.update(deltaTime: dt)
+            
+            if(asteroid1.position.y + asteroid1.size.height <= 0)
+            {
+                asteroid1.reset(to: CGPoint(x: playerSprite.position.x, y: asteroid3.position.y + asteroidSpawnGap),
+                                size: CGSize(width: 50, height: 50),
+                                texture: Asteroid.chooseTexture(currentLevel: 6))
+            }
+            else if(asteroid2.position.y  + asteroid2.size.height <= 0)
+            {
+                asteroid2.reset(to: CGPoint(x: CGFloat(arc4random_uniform(UInt32(0.8 * self.frame.width))) - self.frame.width/8, y: asteroid1.position.y + asteroidSpawnGap),
+                                size: CGSize(width: 50, height: 50),
+                                texture: Asteroid.chooseTexture(currentLevel: 6))
+            }
+            else if(asteroid3.position.y  + asteroid2.size.height <= 0)
+            {
+                asteroid3.reset(to: CGPoint(x: playerSprite.position.x, y: asteroid2.position.y + asteroidSpawnGap),
+                                size: CGSize(width: 50, height: 50),
+                                texture: Asteroid.chooseTexture(currentLevel: 6))
+            }
+        }
     }
     
     //called automatically after scene gets created
