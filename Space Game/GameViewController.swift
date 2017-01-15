@@ -36,6 +36,7 @@ class GameViewController: UIViewController {
                     skView.showsNodeCount = true
                     skView.addGestureRecognizer(panGest)
                     gameSceneNode.anchorPoint = CGPoint(x: 0, y: 0)
+                    gameSceneNode.isPaused = false
 //                    gameSceneNode.size = CGSize(width: skView.frame.size.width/(skView.frame.size.height/gameHeight), height: gameHeight)
                     skView.presentScene(gameSceneNode)
                 }

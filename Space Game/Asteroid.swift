@@ -29,8 +29,9 @@ class Asteroid: SKSpriteNode {
         self.anchorPoint = CGPoint(x: 0, y: 0)//CAUTION: changing the anchorpoint will break all calculations!
         self.position = CGPoint(x: spawnPosition.x, y: spawnPosition.y)
         
+        
         self.physicsBody = SKPhysicsBody(texture: self.texture!, size: (self.size))
-        self.physicsBody?.affectedByGravity = true
+        self.physicsBody?.affectedByGravity = false
         self.physicsBody?.isDynamic = false
     }
     
@@ -43,13 +44,12 @@ class Asteroid: SKSpriteNode {
             texture = Assets.getAsteroid(number: arc4random_uniform(2))
         case 3, 4:
             texture = Assets.comet
-        case 5:
+        case 5, 6:
             texture = Assets.getAsteroid(number: arc4random_uniform(2))
-        case 6:
+        case 7, 8:
             texture = Assets.getAsteroid(number: arc4random_uniform(3))
         default:
             texture = Assets.asteroid1
-            break
         }
         return texture
     }
