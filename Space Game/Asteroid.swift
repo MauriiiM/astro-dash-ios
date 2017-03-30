@@ -10,7 +10,7 @@ import SpriteKit
 
 class Asteroid: SKSpriteNode {
     
-    var scrollSpeed: CGFloat = -10
+    var scrollSpeed: CGFloat = -3.25
     fileprivate var _gameLevel: Int?
     fileprivate var randomX: CGFloat{
         if let parentWidth = self.parent?.scene?.frame.width{
@@ -18,6 +18,7 @@ class Asteroid: SKSpriteNode {
         }
         return -10
     }
+    fileprivate var asteroidPair: Asteroid?
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -35,7 +36,7 @@ class Asteroid: SKSpriteNode {
         self.physicsBody?.isDynamic = false
     }
     
-    static func chooseTexture(currentLevel: Int)-> SKTexture{
+    static func setTexture(currentLevel: Int)-> SKTexture{
         var texture: SKTexture!
         switch currentLevel {
         case 1:
@@ -54,19 +55,52 @@ class Asteroid: SKSpriteNode {
         return texture
     }
     
-    func reset(to newPosition: CGPoint, size newSize: CGSize, texture: SKTexture){
-        self.size = newSize
-        self.position = CGPoint(x: newPosition.x, y: newPosition.y)
+    func reset(to newPosition: CGPoint, level lvl: Int, texture: SKTexture){
         self.texture = texture
-        
-        if(size.width < (parent?.frame.width)!/3.9)
+        self.size = setSizeBasedOn(currentLevel: lvl)
+        if(size.width < (parent?.frame.width)!/3.9)  //will create pair
         {
-            
+//            self.position = 
+//            asteroidPair = Asteroid(at: CGPoint(x: _ y: _))
         }
+        else
+        {
+            self.position = CGPoint(x: newPosition.x, y: newPosition.y)
+        }
+        print("asteroid.x = \(round(self.position.x))\t asteroid.width = \(self.size.width)\t level = \(lvl)")
     }
     
     func update(deltaTime dt: TimeInterval){
         self.position.y.add(scrollSpeed)
-        print("asteroid x = \(self.position.x)")
+    }
+    
+    fileprivate func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat{
+        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
+    }
+    
+    fileprivate func setSizeBasedOn(currentLevel level: Int)->CGSize{
+        var sideLength = 0 as CGFloat//arc4random() * (2.5 * .width / 21) + (.width / 6)
+        if let parentFrame = self.parent?.frame
+        {
+            switch level
+            {
+            case 1:
+                sideLength = Assets.asteroid1.size().width * 1.22
+            case 2:
+                sideLength = randomBetweenNumbers(firstNum: parentFrame.width / 5, secondNum: parentFrame.width / 3.5)
+            case 3:
+                sideLength = randomBetweenNumbers(firstNum: parentFrame.width / 4.5, secondNum: parentFrame.width / 3)
+            case 4, 5:
+                sideLength = randomBetweenNumbers(firstNum: parentFrame.width / 4, secondNum: parentFrame.width / 2.75)
+            case 6:
+                sideLength = parentFrame.width / 2.6
+            case 7, 8:
+                sideLength = randomBetweenNumbers(firstNum: parentFrame.width / 4, secondNum: parentFrame.width / 2.55)
+            default:
+                print("NOT IN ANY LEVEL asteroid.setSize()")
+            }
+            print(sideLength)
+        }
+        return CGSize(width: sideLength, height: sideLength)
     }
 }

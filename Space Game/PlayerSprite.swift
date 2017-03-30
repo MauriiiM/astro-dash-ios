@@ -10,7 +10,6 @@ import SpriteKit
 
 class PlayerSprite: SKSpriteNode {
     
-    let yLocation = 140.0
     var panVelocity: CGFloat = 0
     var vel = GLKVector2(v: (0,0))
     
@@ -21,7 +20,7 @@ class PlayerSprite: SKSpriteNode {
     init(at spawnPosition: CGPoint, size: CGSize, texture: SKTexture?){
         super.init(texture: texture, color: UIColor.clear, size: size)
         
-        self.position = CGPoint(x: spawnPosition.x, y: size.height)
+        self.position = CGPoint(x: spawnPosition.x, y: spawnPosition.y)
         
         self.physicsBody = SKPhysicsBody(texture: self.texture!, size: (self.size))
         self.physicsBody?.affectedByGravity = false
@@ -30,7 +29,7 @@ class PlayerSprite: SKSpriteNode {
     
     func update(){
         self.position.x += panVelocity
-        panVelocity /= 1.4
+        panVelocity /= 1.1
         if(self.position.x < 0){ self.position.x = (self.parent?.frame.width)! }
         if(self.position.x > (self.parent?.frame.width)!){ self.position.x = 0 }
         

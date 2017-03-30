@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-import GameKit
+//import QuartzCore
 
 enum GameState{
     case ready
@@ -18,6 +18,7 @@ enum GameState{
 class GameScene: SKScene {
     
     //    var entities = [GKEntity]()
+    fileprivate var level = 2
     fileprivate var asteroidSpawnGap: CGFloat? = nil
     fileprivate var hasBeenCreated = false
     fileprivate var lastUpdateTimeInterval: CFTimeInterval = 0
@@ -29,7 +30,7 @@ class GameScene: SKScene {
         if recognizer.state == UIGestureRecognizerState.ended {
             GameState.currentGameState = .running
             let panVelocity = recognizer.velocity(in: self.view)
-            if (abs(panVelocity.x/3.7) < 190) {playerSprite.panVelocity = panVelocity.x/3.7}
+            if (abs(panVelocity.x/3.7) < 1000) {playerSprite.panVelocity = panVelocity.x/55}
             print("panVelocity = \(panVelocity)")
             //            if panVelocity < 1 { self.isPaused = true}
         }
@@ -41,6 +42,7 @@ class GameScene: SKScene {
         self.addChild(asteroid1)
         self.addChild(asteroid2)
         self.addChild(asteroid3)
+//        self.addChild(asteroid4)
     }
     
     fileprivate func setAssets(){
@@ -48,8 +50,8 @@ class GameScene: SKScene {
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height/2)
         background.scale(to: CGSize(width: self.size.width, height: self.size.height))
         
-        playerSprite = PlayerSprite(at: CGPoint(x: self.size.width / 2, y: 100),
-                                    size: CGSize(width: self.frame.height * 0.125, height: self.frame.height * 0.125),
+        playerSprite = PlayerSprite(at: CGPoint(x: self.size.width / 2, y: self.frame.height * 0.2),
+                                    size: CGSize(width: self.frame.height * 0.17, height: self.frame.height * 0.17),
                                     texture: Assets.greenUFO)
         
         var asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width/2)
@@ -60,7 +62,7 @@ class GameScene: SKScene {
         asteroid3 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!))
     }
     
-    
+    //@TODO possibly just calls this once per update, not 3 times (once per asteroid) and make it a void func
     fileprivate func setDifficulty(distanceTravelled: Int) -> Int{
         var level = 1
         
@@ -91,8 +93,13 @@ class GameScene: SKScene {
         return level
     }
     
+    /*
+     * Automatically called by scene and used as game loop. In charge of the following
+     * -
+     */
     override func update(_ currentTime: TimeInterval) {
-        if GameState.currentGameState == .running {
+        if GameState.currentGameState == .running
+        {
             var dt: TimeInterval = currentTime - lastUpdateTimeInterval
             lastUpdateTimeInterval = currentTime
             if dt > 1.0 { dt = 1.0 }
@@ -102,31 +109,34 @@ class GameScene: SKScene {
             asteroid2.update(deltaTime: dt)
             asteroid3.update(deltaTime: dt)
             
+            //below is to reset random x-coordinate and calculated/random y-coordinate
+            let playerPosX = playerSprite.position.x
             let distanceTravelled = 0
-            if asteroid1.position.y + asteroid1.size.height <= 0
+            if asteroid1.position.y + asteroid1.size.height <= 0  //when the top of the asteroid reaches bottom of screen
             {
-                asteroid1.reset(to: CGPoint(x: playerSprite.position.x, y: asteroid3.position.y + asteroidSpawnGap!),
-                                size: CGSize(width: 50, height: 50),
-                                texture: Asteroid.chooseTexture(currentLevel: setDifficulty(distanceTravelled: distanceTravelled)))
+                asteroid1.reset(to: CGPoint(x: playerPosX, y: asteroid3.position.y + asteroid3.size.height + asteroidSpawnGap!),
+                                level: level,
+                                texture: Asteroid.setTexture(currentLevel: setDifficulty(distanceTravelled: distanceTravelled)))
             }
-            else if asteroid2.position.y  + asteroid2.size.height <= 0
+            else if asteroid2.position.y + asteroid2.size.height <= 0
             {
-                asteroid2.reset(to: CGPoint(x: CGFloat(arc4random_uniform(UInt32(0.8 * self.frame.width))) - self.frame.width/8, y: asteroid1.position.y + asteroidSpawnGap!),
-                                size: CGSize(width: 50, height: 50),
-                                texture: Asteroid.chooseTexture(currentLevel: setDifficulty(distanceTravelled: distanceTravelled)))
+                asteroid2.reset(to: CGPoint(x: CGFloat(arc4random_uniform(UInt32(0.8 * self.frame.width))) - self.frame.width/8,
+                                            y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!),
+                                level: level,
+                                texture: Asteroid.setTexture(currentLevel: setDifficulty(distanceTravelled: distanceTravelled)))
             }
             else if asteroid3.position.y  + asteroid2.size.height <= 0
             {
-                asteroid3.reset(to: CGPoint(x: playerSprite.position.x, y: asteroid2.position.y + asteroidSpawnGap!),
-                                size: CGSize(width: 50, height: 50),
-                                texture: Asteroid.chooseTexture(currentLevel: setDifficulty(distanceTravelled: distanceTravelled)))
+                asteroid3.reset(to: CGPoint(x: playerPosX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!),
+                                level: level,
+                                texture: Asteroid.setTexture(currentLevel: setDifficulty(distanceTravelled: distanceTravelled)))
             }
         }
     }
     
     //called automatically after scene gets created
     override func didMove(to view: SKView) {
-        asteroidSpawnGap = self.frame.height * 0.3
+        asteroidSpawnGap = self.frame.height * 0.33
         if(!self.hasBeenCreated){
             setAssets()
             addAssets()
