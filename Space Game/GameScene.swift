@@ -25,14 +25,14 @@ class GameScene: SKScene {
     fileprivate var background: SKSpriteNode!
     fileprivate var playerSprite: PlayerSprite!
     fileprivate var asteroid1, asteroid2, asteroid3: Asteroid!
-    fileprivate var ast1Pairm, ast2Pair, ast3Pair: Asteroid?
+    fileprivate var ast1Pair, ast2Pair, ast3Pair: Asteroid?
     
     func handlePanGesture(_ recognizer: UIPanGestureRecognizer){
         if recognizer.state == UIGestureRecognizerState.ended {
             GameState.currentGameState = .running
             let panVelocity = recognizer.velocity(in: self.view)
             if (abs(panVelocity.x/3.7) < 1000) {playerSprite.panVelocity = panVelocity.x/55}
-            print("panVelocity = \(panVelocity)")
+            print("swipe = \(Double(round(panVelocity.x*1000)/1000)) @handlePanGesture()")
             //            if panVelocity < 1 { self.isPaused = true}
         }
     }
@@ -45,15 +45,6 @@ class GameScene: SKScene {
         self.addChild(asteroid3)
     }
     
-    
-    fileprivate func reset(spriteNode: SKSpriteNode, to newPoint: CGPoint){
-        let asteroid = spriteNode as! Asteroid
-        
-        asteroid.reset(to: newPoint,
-                       level: level,
-                       texture: Asteroid.setTexture(currentLevel: 1))
-    }
-    
     fileprivate func setAssets(){
         background = SKSpriteNode(texture: Assets.backgroundClouds)
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height/2)
@@ -64,11 +55,17 @@ class GameScene: SKScene {
                                     texture: Assets.greenUFO)
         
         var asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width/2)
-        asteroid1 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: self.frame.height))
+        asteroid1 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: self.frame.height),
+                             size: #imageLiteral(resourceName: "asteroid1").size,
+                             texture: Assets.asteroid1)
         asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width/2)
-        asteroid2 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!))
+        asteroid2 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!),
+                             size: #imageLiteral(resourceName: "asteroid1").size,
+                             texture: Assets.asteroid1)
         asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width/2)
-        asteroid3 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!))
+        asteroid3 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!),
+                             size: #imageLiteral(resourceName: "asteroid1").size,
+                             texture: Assets.asteroid1)
     }
     
     //@TODO possibly just calls this once per update, not 3 times (once per asteroid) and make it a void func
@@ -117,21 +114,16 @@ class GameScene: SKScene {
             
             //below is to reset random x-coordinate and calculated/random y-coordinate
             let playerPosX = playerSprite.position.x
-            if asteroid1.position.y + asteroid1.size.height <= 0  //when the top of the asteroid reaches bottom of screen
+            if asteroid1.isBelowScreen
             {
-                reset(spriteNode: asteroid1,
-                      to: CGPoint(x: playerPosX, y: asteroid3.position.y + asteroid3.size.height + asteroidSpawnGap!))
-                
+                asteroid1.reset(to: CGPoint(x: playerPosX, y: asteroid3.position.y + asteroid3.size.height + asteroidSpawnGap!), level: level)
             }
-            else if asteroid2.position.y + asteroid2.size.height <= 0
+            else if asteroid2.isBelowScreen
             {
-                reset(spriteNode: asteroid2,
-                      to: CGPoint(x: CGFloat(arc4random_uniform(UInt32(0.8 * self.frame.width))) - self.frame.width/8, y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!))
+                asteroid2.reset(to: CGPoint(x: CGFloat(arc4random_uniform(UInt32(0.8 * self.frame.width))) - self.frame.width/8, y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!), level: level)
             }
-            else if asteroid3.position.y  + asteroid2.size.height <= 0
-            {
-                reset(spriteNode: asteroid3,
-                      to: CGPoint(x: playerPosX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!))
+            else if asteroid3.isBelowScreen            {
+                asteroid3.reset(to: CGPoint(x: playerPosX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!), level: level)
             }
         }
     }

@@ -9,14 +9,14 @@
 import SpriteKit
 
 class FallingNode: SKSpriteNode {
-    
+    var isBelowScreen = false
     var fallSpeed: CGFloat = -3.25
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    required init(at spawnPosition: CGPoint, size: CGSize, texture: SKTexture){
+    init(at spawnPosition: CGPoint, size: CGSize, texture: SKTexture){
         super.init(texture: texture, color: UIColor.clear, size: size)
         
         anchorPoint = CGPoint(x: 0, y: 0)//CAUTION: changing the anchorpoint will break all calculations!
@@ -28,16 +28,17 @@ class FallingNode: SKSpriteNode {
         physicsBody?.isDynamic = false
     }
     
-    fileprivate func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat{
+    func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat{
         return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
     }
     
-    func reset(to newPosition: CGPoint, texture: SKTexture){
-        self.texture = texture
-        self.position = CGPoint(x: newPosition.x, y: newPosition.y)
+    func reset(to newPosition: CGPoint){
+        position = CGPoint(x: newPosition.x, y: newPosition.y)
+        isBelowScreen = false
     }
     
     func update(deltaTime dt: TimeInterval){
-        self.position.y.add(fallSpeed)
+        position.y.add(fallSpeed)
+        if (position.y + size.height <= 0) { isBelowScreen = true}
     }
 }
