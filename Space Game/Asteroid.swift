@@ -11,20 +11,23 @@ import SpriteKit
 class Asteroid: SKSpriteNode {
     
     var scrollSpeed: CGFloat = -3.25
-    fileprivate var _gameLevel: Int?
     fileprivate var randomX: CGFloat{
         if let parentWidth = self.parent?.scene?.frame.width{
             return CGFloat(arc4random_uniform(UInt32(parentWidth + self.size.width))) - CGFloat(self.size.width/2)
         }
         return -10
     }
-    fileprivate var asteroidPair: Asteroid?
+    fileprivate var _hasPair = false
+    fileprivate var hasPair: Bool {
+        get{ return _hasPair }
+        set(newValue){ _hasPair = newValue }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(at spawnPosition: CGPoint){
+    required init(at spawnPosition: CGPoint){
         super.init(texture: Assets.asteroid1, color: UIColor.clear, size: Assets.asteroid1.size())
         
         self.anchorPoint = CGPoint(x: 0, y: 0)//CAUTION: changing the anchorpoint will break all calculations!
@@ -55,19 +58,19 @@ class Asteroid: SKSpriteNode {
         return texture
     }
     
-    func reset(to newPosition: CGPoint, level lvl: Int, texture: SKTexture){
+    func reset(to newPosition: CGPoint, level: Int, texture: SKTexture){
         self.texture = texture
-        self.size = setSizeBasedOn(currentLevel: lvl)
+        self.size = setSizeBasedOn(currentLevel: level)
         if(size.width < (parent?.frame.width)!/3.9)  //will create pair
         {
-//            self.position = 
-//            asteroidPair = Asteroid(at: CGPoint(x: _ y: _))
+            //            self.position =
+            
         }
         else
         {
             self.position = CGPoint(x: newPosition.x, y: newPosition.y)
         }
-        print("asteroid.x = \(round(self.position.x))\t asteroid.width = \(self.size.width)\t level = \(lvl)")
+        print("asteroid.x = \(round(self.position.x))\t asteroid.width = \(self.size.width)\t level = \(level)")
     }
     
     func update(deltaTime dt: TimeInterval){

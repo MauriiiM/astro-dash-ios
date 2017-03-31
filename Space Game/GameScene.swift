@@ -25,6 +25,7 @@ class GameScene: SKScene {
     fileprivate var background: SKSpriteNode!
     fileprivate var playerSprite: PlayerSprite!
     fileprivate var asteroid1, asteroid2, asteroid3: Asteroid!
+    fileprivate var ast1Pairm, ast2Pair, ast3Pair: Asteroid?
     
     func handlePanGesture(_ recognizer: UIPanGestureRecognizer){
         if recognizer.state == UIGestureRecognizerState.ended {
@@ -42,7 +43,15 @@ class GameScene: SKScene {
         self.addChild(asteroid1)
         self.addChild(asteroid2)
         self.addChild(asteroid3)
-//        self.addChild(asteroid4)
+    }
+    
+    
+    fileprivate func reset(spriteNode: SKSpriteNode, to newPoint: CGPoint){
+        let asteroid = spriteNode as! Asteroid
+        
+        asteroid.reset(to: newPoint,
+                       level: level,
+                       texture: Asteroid.setTexture(currentLevel: 1))
     }
     
     fileprivate func setAssets(){
@@ -93,10 +102,7 @@ class GameScene: SKScene {
         return level
     }
     
-    /*
-     * Automatically called by scene and used as game loop. In charge of the following
-     * -
-     */
+    // Automatically called by scene and used as game loop. In charge of the following
     override func update(_ currentTime: TimeInterval) {
         if GameState.currentGameState == .running
         {
@@ -111,25 +117,21 @@ class GameScene: SKScene {
             
             //below is to reset random x-coordinate and calculated/random y-coordinate
             let playerPosX = playerSprite.position.x
-            let distanceTravelled = 0
             if asteroid1.position.y + asteroid1.size.height <= 0  //when the top of the asteroid reaches bottom of screen
             {
-                asteroid1.reset(to: CGPoint(x: playerPosX, y: asteroid3.position.y + asteroid3.size.height + asteroidSpawnGap!),
-                                level: level,
-                                texture: Asteroid.setTexture(currentLevel: setDifficulty(distanceTravelled: distanceTravelled)))
+                reset(spriteNode: asteroid1,
+                      to: CGPoint(x: playerPosX, y: asteroid3.position.y + asteroid3.size.height + asteroidSpawnGap!))
+                
             }
             else if asteroid2.position.y + asteroid2.size.height <= 0
             {
-                asteroid2.reset(to: CGPoint(x: CGFloat(arc4random_uniform(UInt32(0.8 * self.frame.width))) - self.frame.width/8,
-                                            y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!),
-                                level: level,
-                                texture: Asteroid.setTexture(currentLevel: setDifficulty(distanceTravelled: distanceTravelled)))
+                reset(spriteNode: asteroid2,
+                      to: CGPoint(x: CGFloat(arc4random_uniform(UInt32(0.8 * self.frame.width))) - self.frame.width/8, y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!))
             }
             else if asteroid3.position.y  + asteroid2.size.height <= 0
             {
-                asteroid3.reset(to: CGPoint(x: playerPosX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!),
-                                level: level,
-                                texture: Asteroid.setTexture(currentLevel: setDifficulty(distanceTravelled: distanceTravelled)))
+                reset(spriteNode: asteroid3,
+                      to: CGPoint(x: playerPosX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!))
             }
         }
     }
