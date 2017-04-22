@@ -10,11 +10,10 @@ import SpriteKit
 
 class Asteroid: FallingNode {
     fileprivate var _hasPair = false
-    fileprivate var hasPair: Bool {
+    var hasPair: Bool {
         get{ return _hasPair }
         set(newValue){ _hasPair = newValue }
     }
-    
     
     func reset(to newPosition: CGPoint, level: Int){
         super.reset(to: newPosition)
@@ -34,7 +33,7 @@ class Asteroid: FallingNode {
             {
             case 1:
                 texture = Assets.asteroid1
-                sideLength = Assets.asteroid1.size().width * 1.22
+                sideLength = Assets.asteroid1.size().width * 1.35
             case 2:
                 texture = Assets.getAsteroid(number: arc4random_uniform(2))
                 sideLength = randomBetweenNumbers(firstNum: parentFrame.width / 5, secondNum: parentFrame.width / 3.5)
@@ -58,7 +57,7 @@ class Asteroid: FallingNode {
                 texture = Assets.asteroid1
                 sideLength = Assets.asteroid1.size().width * 1.22
             }
-            print("width = \(Double(round(1000*sideLength/1000))), @setAttributes() ")
+//            print("width = \(Double(round(1000*sideLength/1000))), @setAttributes() ")
         }
         return (size: CGSize(width: sideLength, height: sideLength), texture: texture)
     }

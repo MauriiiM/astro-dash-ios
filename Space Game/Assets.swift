@@ -17,14 +17,14 @@ class Assets{
         asteroid2 = SKTexture(imageNamed: "asteroid2")
         comet = SKTexture(imageNamed: "comet")
         greenUFO = SKTexture(imageNamed: "greenUFO")
-        print("game assets loaded")
+//        print("loadGameAssets(), @Assets")
     }
     
     static func loadMenuAssets(){
         background = SKTexture(imageNamed: "background")
         backgroundClouds = SKTexture(imageNamed: "background_clouds")
         backdrop = SKTexture(imageNamed: "backdrop")
-        print("menu assets loaded")
+//        print("loadMenuAssets(), @Assets")
     }
     
     static func getAsteroid(number: UInt32)->SKTexture{

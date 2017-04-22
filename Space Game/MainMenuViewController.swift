@@ -22,8 +22,6 @@ class MainMenuViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        Assets.loadGameAssets()
-        print("prepareed segue for GameVC")
-        
+        Assets.loadGameAssets()        
     }
 }
