@@ -60,11 +60,12 @@ class GameScene: SKScene {
             asteroid.position.x = random(min: 0, max: size.width/2) - astWidth/2
 //            print("PAIR HERE \(size.width/2 - astWidth/2)")
             
-            let pairX = random(min: asteroid.position.x + (1.5 * playerSprite.size.width),
-                               max: size.width - astWidth)
+            //for some reason, 1.9 gives it just enough room to pass
+            let pairX = /*random(min: */asteroid.position.x + (1.9 * playerSprite.size.width)
+                              /* max: size.width - astWidth)*/
             let pairPoint = CGPoint(x: pairX, y:asteroid.position.y - asteroid1.size.height/2)
             
-            asteroidPairOf[asteroid] = Asteroid(at: pairPoint, texture: asteroid1.texture!, size: asteroid1.size, atSpeed: levelToFallSpeed[level]!)
+            asteroidPairOf[asteroid] = Asteroid(at: pairPoint, texture: asteroid1.texture!, size: asteroid1.size)
             self.addChild(asteroidPairOf[asteroid]!!)
         }
     }
@@ -88,24 +89,25 @@ class GameScene: SKScene {
         background.scale(to: CGSize(width: self.size.width, height: self.size.height))
         
         playerSprite = PlayerSprite(at: CGPoint(x: self.size.width / 2, y: self.frame.height * 0.2),
-                                    size: CGSize(width: self.frame.height * 0.17, height: self.frame.height * 0.17),
+                                    size: CGSize(width: self.frame.height * 0.16, height: self.frame.height * 0.16),
                                     texture: Assets.greenUFO)
         
-        var asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width * 1.35)
+        let asteroidSize = CGSize(width: Assets.asteroid1.size().width * 1.35, height: Assets.asteroid1.size().width * 1.35)
+        var asteroidSpawnX = random(min: 0, max: size.width) - asteroidSize.width/2
         asteroid1 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: self.frame.height),
                              texture: Assets.asteroid1,
-                             size: #imageLiteral(resourceName: "asteroid1").size,
-                             atSpeed: levelToFallSpeed[level]!)
-        asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width)
+                             size: asteroidSize)
+//        addAsteroidPair(for: asteroid1)
+        asteroidSpawnX = random(min: 0, max: size.width) - asteroidSize.width/2
         asteroid2 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!),
                              texture: Assets.asteroid1,
-                             size: #imageLiteral(resourceName: "asteroid1").size,
-                             atSpeed: levelToFallSpeed[level]!)
-        asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width)
+                             size: asteroidSize)
+//        addAsteroidPair(for: asteroid2)
+        asteroidSpawnX = random(min: 0, max: size.width) - asteroidSize.width/2
         asteroid3 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!),
                              texture: Assets.asteroid1,
-                             size: #imageLiteral(resourceName: "asteroid1").size,
-                             atSpeed: levelToFallSpeed[level]!)
+                             size: asteroidSize)
+//        addAsteroidPair(for: asteroid3)
     }
     
     //@TODO possibly just calls this once per update, not 3 times (once per asteroid) and make it a void func
@@ -134,6 +136,7 @@ class GameScene: SKScene {
         if GameState.currentGameState == .running
         {
             setLevel()
+            FallingNode.fallSpeed = levelToFallSpeed[level]!
             
             var dt: TimeInterval = currentTime - lastUpdateTimeInterval
             lastUpdateTimeInterval = currentTime

@@ -16,7 +16,7 @@ class Asteroid: FallingNode {
     }
     
     func reset(to newPosition: CGPoint, atSpeed fallSpeed: CGFloat, level: Int){
-        super.reset(to: newPosition, atSpeed: fallSpeed)
+        super.reset(to: newPosition)
         let attributes = setAttributes(level: level)
         size = attributes.size
         texture = attributes.texture
