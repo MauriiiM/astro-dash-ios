@@ -16,7 +16,6 @@ enum GameState{
     static var currentGameState = GameState.ready
 }
 class GameScene: SKScene {
-    
     fileprivate var level = 1
     fileprivate let levelToFallSpeed: [Int: CGFloat] = [1: -3.25,
                                                         2: -4.62,
@@ -26,13 +25,17 @@ class GameScene: SKScene {
                                                         6: -4.38,
                                                         7: -4.74,
                                                         8: -4.98]
-    fileprivate var asteroidPairOf = [Asteroid: Asteroid?]()
-    fileprivate var asteroidSpawnGap: CGFloat? = nil
     fileprivate var hasBeenCreated = false
-    fileprivate var lastUpdateTimeInterval: CFTimeInterval = 0
+    fileprivate var lastUpdateTimeInterval: CFTimeInterval = 0 //used for getting delta time
+    fileprivate var distTravelled = 0.0 //in millions
+    fileprivate  var distTravVelocity = 0.0
+    
     fileprivate var background: SKSpriteNode!
     fileprivate var playerSprite: PlayerSprite!
     fileprivate var asteroid1, asteroid2, asteroid3: Asteroid!
+    fileprivate var asteroidPairOf = [Asteroid: Asteroid?]()
+    fileprivate var asteroidSpawnGap: CGFloat? = nil
+    
     
     func handlePanGesture(_ recognizer: UIPanGestureRecognizer){
         if recognizer.state == UIGestureRecognizerState.ended {
@@ -61,7 +64,7 @@ class GameScene: SKScene {
                                max: size.width - astWidth)
             let pairPoint = CGPoint(x: pairX, y:asteroid.position.y - asteroid1.size.height/2)
             
-            asteroidPairOf[asteroid] = Asteroid(at: pairPoint, size: asteroid1.size, texture: asteroid1.texture!)
+            asteroidPairOf[asteroid] = Asteroid(at: pairPoint, texture: asteroid1.texture!, size: asteroid1.size, atSpeed: levelToFallSpeed[level]!)
             self.addChild(asteroidPairOf[asteroid]!!)
         }
     }
@@ -90,52 +93,54 @@ class GameScene: SKScene {
         
         var asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width * 1.35)
         asteroid1 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: self.frame.height),
+                             texture: Assets.asteroid1,
                              size: #imageLiteral(resourceName: "asteroid1").size,
-                             texture: Assets.asteroid1)
+                             atSpeed: levelToFallSpeed[level]!)
         asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width)
         asteroid2 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!),
+                             texture: Assets.asteroid1,
                              size: #imageLiteral(resourceName: "asteroid1").size,
-                             texture: Assets.asteroid1)
+                             atSpeed: levelToFallSpeed[level]!)
         asteroidSpawnX = CGFloat(arc4random_uniform(UInt32(self.size.width + Assets.asteroid1.size().width))) - CGFloat(#imageLiteral(resourceName: "asteroid1").size.width)
         asteroid3 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!),
+                             texture: Assets.asteroid1,
                              size: #imageLiteral(resourceName: "asteroid1").size,
-                             texture: Assets.asteroid1)
+                             atSpeed: levelToFallSpeed[level]!)
     }
     
     //@TODO possibly just calls this once per update, not 3 times (once per asteroid) and make it a void func
-    fileprivate func setDifficulty(distanceTravelled: Int) -> Int{
-        var level = 1
-        
-        if (distanceTravelled < 5_000_000) { //Mars
+    fileprivate func setLevel(){
+        if (distTravelled < 5) { //Mars
             level = 1;
-        } else if (distanceTravelled < 10_000_000) { //asteroid belt
+        } else if (distTravelled < 10) { //asteroid belt
             level = 2;
-        } else if (distanceTravelled < 20_000_000) { //Jupiter
+        } else if (distTravelled < 20) { //Jupiter
             level = 3;
-        } else if (distanceTravelled < 30_000_000) { //Saturn
+        } else if (distTravelled < 30) { //Saturn
             level = 4;
-        } else if (distanceTravelled < 40_000_000) { //Uranus
+        } else if (distTravelled < 40) { //Uranus
             level = 5;
-        } else if (distanceTravelled < 50_000_000) { // Neptune
+        } else if (distTravelled < 50) { // Neptune
             level = 6;
-        } else if (distanceTravelled < 60_000_000) { // Pluto
+        } else if (distTravelled < 60) { // Pluto
             level = 7;
         } else {
             level = 8;
         }
-        return level
     }
     
-    // Automatically called by scene and used as game loop. In charge of the following
+    // Automatically called by scene and used as game loop.
     override func update(_ currentTime: TimeInterval) {
         if GameState.currentGameState == .running
         {
-//            print(random(min: 0, max: size.width/2))
-
+            setLevel()
             
             var dt: TimeInterval = currentTime - lastUpdateTimeInterval
             lastUpdateTimeInterval = currentTime
             if dt > 1.0 { dt = 1.0 }
+            distTravVelocity = Double(abs(levelToFallSpeed[level]!))
+            distTravelled += (distTravVelocity * dt) * 0.035//0.035 is an Android-match approx. correction            
+            print("distTrav = \(distTravelled) \n level = \(level)" )
             
             playerSprite.update()
             asteroid1.update(deltaTime: dt)
@@ -152,19 +157,19 @@ class GameScene: SKScene {
             if asteroid1.isBelowScreen
             {
                 removeAsteroidPair(from: asteroid1)
-                asteroid1.reset(to: CGPoint(x: playerPosX, y: asteroid3.position.y + asteroid3.size.height + asteroidSpawnGap!), level: level)
+                asteroid1.reset(to: CGPoint(x: playerPosX, y: asteroid3.position.y + asteroid3.size.height + asteroidSpawnGap!), atSpeed: levelToFallSpeed[level]!, level: level)
                 addAsteroidPair(for: asteroid1)
             }
             else if asteroid2.isBelowScreen
             {
                 removeAsteroidPair(from: asteroid2)
-                asteroid2.reset(to: CGPoint(x: CGFloat(arc4random_uniform(UInt32(0.8 * self.frame.width))) - self.frame.width/8, y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!), level: level)
+                asteroid2.reset(to: CGPoint(x: CGFloat(arc4random_uniform(UInt32(0.8 * self.frame.width))) - self.frame.width/8, y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!), atSpeed: levelToFallSpeed[level]!, level: level)
                 addAsteroidPair(for: asteroid2)
             }
             else if asteroid3.isBelowScreen
             {
                 removeAsteroidPair(from: asteroid3)
-                asteroid3.reset(to: CGPoint(x: playerPosX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!), level: level)
+                asteroid3.reset(to: CGPoint(x: playerPosX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!), atSpeed: levelToFallSpeed[level]!, level: level)
                 addAsteroidPair(for: asteroid3)
             }
         }
