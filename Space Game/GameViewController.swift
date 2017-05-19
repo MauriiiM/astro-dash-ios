@@ -32,7 +32,7 @@ class GameViewController: UIViewController {
                     panGest.velocity(in: skView)
                     
                     skView.showsFPS = true
-                    skView.showsPhysics = false
+                    skView.showsPhysics = true
                     skView.showsNodeCount = true
                     skView.addGestureRecognizer(panGest)
                     gameSceneNode.anchorPoint = CGPoint(x: 0, y: 0)

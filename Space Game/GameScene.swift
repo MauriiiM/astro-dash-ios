@@ -15,16 +15,16 @@ enum GameState{
     
     static var currentGameState = GameState.ready
 }
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     fileprivate var level = 1
-    fileprivate let levelToFallSpeed: [Int: CGFloat] = [1: -3.25,
-                                                        2: -4.62,
-                                                        3: -4.38,
-                                                        4: -4.31,
-                                                        5: -4.74,
-                                                        6: -4.38,
-                                                        7: -4.74,
-                                                        8: -4.98]
+    fileprivate let levelToFallSpeed: [Int: CGFloat] = [1: -3.20,
+                                                        2: -4.60,
+                                                        3: -4.35,
+                                                        4: -4.30,
+                                                        5: -4.70,
+                                                        6: -4.35,
+                                                        7: -4.70,
+                                                        8: -4.95]
     fileprivate var hasBeenCreated = false
     fileprivate var lastUpdateTimeInterval: CFTimeInterval = 0 //used for getting delta time
     fileprivate var distTravelled = 0.0 //in millions
@@ -41,7 +41,8 @@ class GameScene: SKScene {
         if recognizer.state == UIGestureRecognizerState.ended {
             GameState.currentGameState = .running
             let panVelocity = recognizer.velocity(in: self.view)
-            if (abs(panVelocity.x/3.7) < 1000) {playerSprite.panVelocity = panVelocity.x/55}
+//            if (abs(panVelocity.x/3.7) < 1000) {
+            playerSprite.panVelocity = panVelocity.x/60
         }
     }
     
@@ -93,22 +94,24 @@ class GameScene: SKScene {
                                     texture: Assets.greenUFO)
         
         let asteroidSize = CGSize(width: Assets.asteroid1.size().width * 1.35, height: Assets.asteroid1.size().width * 1.35)
-        var asteroidSpawnX = random(min: 0, max: size.width) - asteroidSize.width/2
-        asteroid1 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: self.frame.height),
+        var asteroidSpawnX = random(min: 0, max: size.width)
+        asteroid1 = Asteroid(at: CGPoint(x: asteroidSpawnX,
+                                         y: self.frame.height + asteroidSize.height/2),
                              texture: Assets.asteroid1,
                              size: asteroidSize)
-//        addAsteroidPair(for: asteroid1)
-        asteroidSpawnX = random(min: 0, max: size.width) - asteroidSize.width/2
-        asteroid2 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!),
+
+        asteroidSpawnX = random(min: 0, max: size.width)
+        asteroid2 = Asteroid(at: CGPoint(x: asteroidSpawnX,
+                                         y: asteroid1.position.y + asteroid1.size.height/2 + asteroidSpawnGap!),
                              texture: Assets.asteroid1,
                              size: asteroidSize)
-//        addAsteroidPair(for: asteroid2)
-        asteroidSpawnX = random(min: 0, max: size.width) - asteroidSize.width/2
-        asteroid3 = Asteroid(at: CGPoint(x: asteroidSpawnX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!),
+        
+        asteroidSpawnX = random(min: 0, max: size.width)
+        asteroid3 = Asteroid(at: CGPoint(x: asteroidSpawnX,
+                                         y: asteroid2.position.y + asteroid2.size.height/2 + asteroidSpawnGap!),
                              texture: Assets.asteroid1,
                              size: asteroidSize)
-//        addAsteroidPair(for: asteroid3)
-    }
+        }
     
     //@TODO possibly just calls this once per update, not 3 times (once per asteroid) and make it a void func
     fileprivate func setLevel(){
@@ -131,7 +134,13 @@ class GameScene: SKScene {
         }
     }
     
-    // Automatically called by scene and used as game loop.
+    //called automatically by PhysicsBodyDelegate
+    func didBegin(_ contact: SKPhysicsContact) {
+        print("COLLISION!!!!!!!!!!!!!!")
+        
+    }
+    
+    // Automatically called after didMove(). Called CONTINUOUSLY and used as game loop.
     override func update(_ currentTime: TimeInterval) {
         if GameState.currentGameState == .running
         {
@@ -143,7 +152,7 @@ class GameScene: SKScene {
             if dt > 1.0 { dt = 1.0 }
             distTravVelocity = Double(abs(levelToFallSpeed[level]!))
             distTravelled += (distTravVelocity * dt) * 0.035//0.035 is an Android-match approx. correction            
-            print("distTrav = \(distTravelled) \n level = \(level)" )
+//            print("distTrav = \(distTravelled) \n level = \(level)" )
             
             playerSprite.update()
             asteroid1.update(deltaTime: dt)
@@ -154,39 +163,43 @@ class GameScene: SKScene {
             asteroidPairOf[asteroid2]??.update(deltaTime: dt)
             asteroidPairOf[asteroid3]??.update(deltaTime: dt)
             
+            
             //below is to reset random x-coordinate and calculated/random y-coordinate
             let playerPosX = playerSprite.position.x
             
             if asteroid1.isBelowScreen
             {
                 removeAsteroidPair(from: asteroid1)
-                asteroid1.reset(to: CGPoint(x: playerPosX, y: asteroid3.position.y + asteroid3.size.height + asteroidSpawnGap!), atSpeed: levelToFallSpeed[level]!, level: level)
+                asteroid1.reset(to: CGPoint(x: random(min: 0, max: size.width),
+                                            y: asteroid3.position.y + asteroid3.size.height/2 + asteroidSpawnGap!), atSpeed: levelToFallSpeed[level]!, level: level)
                 addAsteroidPair(for: asteroid1)
             }
             else if asteroid2.isBelowScreen
             {
                 removeAsteroidPair(from: asteroid2)
-                asteroid2.reset(to: CGPoint(x: CGFloat(arc4random_uniform(UInt32(0.8 * self.frame.width))) - self.frame.width/8, y: asteroid1.position.y + asteroid1.size.height + asteroidSpawnGap!), atSpeed: levelToFallSpeed[level]!, level: level)
+                asteroid2.reset(to: CGPoint(x: playerPosX,
+                                            y: asteroid1.position.y + asteroid1.size.height/2 + asteroidSpawnGap!), atSpeed: levelToFallSpeed[level]!, level: level)
                 addAsteroidPair(for: asteroid2)
             }
             else if asteroid3.isBelowScreen
             {
                 removeAsteroidPair(from: asteroid3)
-                asteroid3.reset(to: CGPoint(x: playerPosX, y: asteroid2.position.y + asteroid2.size.height + asteroidSpawnGap!), atSpeed: levelToFallSpeed[level]!, level: level)
+                asteroid3.reset(to: CGPoint(x: random(min: 0, max: size.width),
+                                            y: asteroid2.position.y + asteroid2.size.height/2 + asteroidSpawnGap!), atSpeed: levelToFallSpeed[level]!, level: level)
                 addAsteroidPair(for: asteroid3)
             }
         }
     }
     
-    //called automatically after scene gets created
+    // Automatically called ONCE when scene gets initialized
     override func didMove(to view: SKView) {
+        self.physicsWorld.contactDelegate = self;
         asteroidSpawnGap = self.frame.height * 0.33
         if(!self.hasBeenCreated){
             setAssets()
             addAssets()
-//            pairAssets()
-            self.hasBeenCreated = true
-            print("game scene has been created")
+            hasBeenCreated = true
+            print("didMove() finished in GameScene")
         }
     }
 }

@@ -18,14 +18,9 @@ class FallingNode: SKSpriteNode {
     
     init(at spawnPosition: CGPoint, texture: SKTexture, size: CGSize){
         super.init(texture: texture, color: UIColor.clear, size: size)
-        
-        anchorPoint = CGPoint(x: 0, y: 0)//CAUTION: changing the anchorpoint will break all calculations!
+    
         position = CGPoint(x: spawnPosition.x, y: spawnPosition.y)
-        
-        
-        physicsBody = SKPhysicsBody(texture: texture, size: size)
-        physicsBody?.affectedByGravity = false
-        physicsBody?.isDynamic = false
+        setupPhysicsBody()
     }
     
      func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat{
@@ -37,8 +32,16 @@ class FallingNode: SKSpriteNode {
         isBelowScreen = false
     }
     
+    func setupPhysicsBody(){
+        physicsBody = SKPhysicsBody(texture: texture!, size: size)
+        physicsBody!.isDynamic = true
+        physicsBody!.affectedByGravity = false
+        physicsBody!.allowsRotation = false
+        physicsBody!.contactTestBitMask = PlayerSprite.playerBitMask
+    }
+    
     func update(deltaTime dt: TimeInterval){
         position.y.add(FallingNode.fallSpeed)
-        if (position.y + size.height <= 0) { isBelowScreen = true}
+        if (position.y + size.height/2 <= 0) { isBelowScreen = true}
     }
 }

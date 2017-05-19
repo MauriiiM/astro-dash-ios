@@ -107,17 +107,11 @@
 		2248806C1E17A64B003E732E /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				226A97B21E1DDF6A0096515A /* Assets.swift */,
 				22EE2EF11DDC0D99003188BD /* Assets.xcassets */,
 				22EE2EF61DDC0D99003188BD /* Info.plist */,
 			);
 			name = "supporting files";
-			sourceTree = "<group>";
-		};
-		225F3DB31DE391E50036115A /* gameworld */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = gameworld;
 			sourceTree = "<group>";
 		};
 		22D45E561E0239AB0092C5FD /* mainmenuview */ = {
@@ -136,7 +130,6 @@
 				22E432881E21F6C300E22BF4 /* GameScene.sks */,
 				2248806A1E1612C3003E732E /* GameScene.swift */,
 				22EE2EEC1DDC0D99003188BD /* GameViewController.swift */,
-				225F3DB31DE391E50036115A /* gameworld */,
 			);
 			name = gameview;
 			sourceTree = "<group>";
@@ -184,7 +177,6 @@
 			children = (
 				22EE2EEE1DDC0D99003188BD /* Main.storyboard */,
 				22EE2EE41DDC0D99003188BD /* AppDelegate.swift */,
-				226A97B21E1DDF6A0096515A /* Assets.swift */,
 				22D45E5B1E02582F0092C5FD /* launchview */,
 				22D45E561E0239AB0092C5FD /* mainmenuview */,
 				22D45E571E0239C60092C5FD /* gameview */,
