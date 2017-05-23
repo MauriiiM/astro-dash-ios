@@ -12,8 +12,9 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
-    let gameHeight: CGFloat = 555
-    var gameWidth: CGFloat?
+    fileprivate let gameHeight: CGFloat = 555
+    fileprivate var gameWidth: CGFloat?
+//    fileprivate gameScene: SKScene?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,16 +38,12 @@ class GameViewController: UIViewController {
                     skView.addGestureRecognizer(panGest)
                     gameSceneNode.anchorPoint = CGPoint(x: 0, y: 0)
                     gameSceneNode.isPaused = false
-//                    gameSceneNode.size = CGSize(width: skView.frame.size.width/(skView.frame.size.height/gameHeight), height: gameHeight)
                     skView.presentScene(gameSceneNode)
+                    gameSceneNode.parentVC = self
                 }
             }
         }
         print("viewDidLoad() finished in GameViewController")
-    }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,7 +55,15 @@ class GameViewController: UIViewController {
         return true
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     override var shouldAutorotate: Bool {
         return false
+    }
+    
+    func gameOver() {
+        performSegue(withIdentifier: "goToEndGame", sender: nil)
     }
 }
