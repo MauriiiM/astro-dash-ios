@@ -9,12 +9,21 @@
 import UIKit
 
 class EndGameViewController: UIViewController {
+    
+    
+    @IBOutlet weak var restartButton: UIButton!
+    @IBOutlet weak var currentScoreLabel: UILabel!
+    @IBOutlet weak var hsLabel: UILabel!
 
+    var recievedScore = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+//        currentScoreLabel.font = UIFont(name: "04b_19", size: <#T##CGFloat#>)
+//        currentScoreLabel.text = recievedScore
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

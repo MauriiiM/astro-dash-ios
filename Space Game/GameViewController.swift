@@ -15,6 +15,8 @@ class GameViewController: UIViewController {
     fileprivate let gameHeight: CGFloat = 555
     fileprivate var gameWidth: CGFloat?
 //    fileprivate gameScene: SKScene?
+    fileprivate var score = 0.0
+    fileprivate var level = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,11 @@ class GameViewController: UIViewController {
         return true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let endGameVC: EndGameViewController = segue.destination as! EndGameViewController
+        endGameVC.recievedScore = String.localizedStringWithFormat("%.2f %@", score, "")
+    }
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
@@ -63,7 +70,9 @@ class GameViewController: UIViewController {
         return false
     }
     
-    func gameOver() {
+    func gameOver(distance: Double, level: Int) {
+        score = distance
+        self.level = level
         performSegue(withIdentifier: "goToEndGame", sender: nil)
     }
 }
