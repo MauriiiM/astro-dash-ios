@@ -174,7 +174,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //called automatically by PhysicsBodyDelegate when an asteroid object hits a player object
     func didBegin(_ contact: SKPhysicsContact) {
-        isPaused = true //needed because for some reason, it will detect a few collisions
+        isPaused = true //needed because for some reason, it will detect a few more collisions
         parentVC.gameOver(distance: distTravelled, level: level)
         GameState.currentGameState = .ready
         

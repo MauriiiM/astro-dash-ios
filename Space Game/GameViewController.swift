@@ -12,6 +12,7 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
+    fileprivate var gameScene: GameScene!
     fileprivate let gameHeight: CGFloat = 555
     fileprivate var gameWidth: CGFloat?
 //    fileprivate gameScene: SKScene?
@@ -25,26 +26,23 @@ class GameViewController: UIViewController {
             Assets.loadMenuAssets()
             Assets.loadGameAssets()
         }
-        if let gameScene = GKScene(fileNamed: "GameScene"){
-            if let gameSceneNode = gameScene.rootNode as! GameScene?{
-                // gameSceneNode.scaleMode = .aspectFill
-                //gameSceneNode.entities = gameScene.entities
-                let panGest = UIPanGestureRecognizer(target: gameSceneNode, action: #selector (gameSceneNode.handlePanGesture))
-                
-                if let skView = self.view as! SKView?{
-                    panGest.velocity(in: skView)
-                    
-                    skView.showsFPS = true
-                    skView.showsPhysics = true
-                    skView.showsNodeCount = true
-                    skView.addGestureRecognizer(panGest)
-                    gameSceneNode.anchorPoint = CGPoint(x: 0, y: 0)
-                    gameSceneNode.isPaused = false
-                    skView.presentScene(gameSceneNode)
-                    gameSceneNode.parentVC = self
-                }
-            }
-        }
+
+        let skView = self.view as! SKView
+        skView.showsFPS = true
+        skView.showsPhysics = true
+        skView.showsNodeCount = true
+        
+        gameScene = GameScene(size: skView.frame.size)
+        gameScene.anchorPoint = CGPoint(x: 0, y: 0)
+        gameScene.isPaused = false
+        gameScene.parentVC = self
+        
+        let panGest = UIPanGestureRecognizer(target: gameScene, action: #selector (gameScene.handlePanGesture))
+        skView.addGestureRecognizer(panGest)
+        panGest.velocity(in: skView)
+        
+        skView.presentScene(gameScene)
+    
         print("viewDidLoad() finished in GameViewController")
     }
     
@@ -71,8 +69,18 @@ class GameViewController: UIViewController {
     }
     
     func gameOver(distance: Double, level: Int) {
-        score = distance
+//        let defaults = UserDefaults.standard
+//        
+//        if let stringOne = defaults.string(forKey: defaultsKeys.keyOne) {
+//            print(stringOne)
+//            
+//        }
+        
+        self.score = distance
         self.level = level
         performSegue(withIdentifier: "goToEndGame", sender: nil)
+    }
+    
+    @IBAction func unwindToGameVC(segue: UIStoryboardSegue) {
     }
 }
