@@ -11,7 +11,7 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-    
+    fileprivate var skView: SKView!
     fileprivate var gameScene: GameScene!
     fileprivate let gameHeight: CGFloat = 555
     fileprivate var gameWidth: CGFloat?
@@ -21,28 +21,20 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if (Assets.DEBUG == true)
         {
             Assets.loadMenuAssets()
             Assets.loadGameAssets()
         }
 
-        let skView = self.view as! SKView
+        skView = self.view as! SKView
         skView.showsFPS = true
         skView.showsPhysics = true
         skView.showsNodeCount = true
         
-        gameScene = GameScene(size: skView.frame.size)
-        gameScene.anchorPoint = CGPoint(x: 0, y: 0)
-        gameScene.isPaused = false
-        gameScene.parentVC = self
+        createGame()
         
-        let panGest = UIPanGestureRecognizer(target: gameScene, action: #selector (gameScene.handlePanGesture))
-        skView.addGestureRecognizer(panGest)
-        panGest.velocity(in: skView)
-        
-        skView.presentScene(gameScene)
-    
         print("viewDidLoad() finished in GameViewController")
     }
     
@@ -68,6 +60,18 @@ class GameViewController: UIViewController {
         return false
     }
     
+    func createGame(){
+        gameScene = GameScene(size: skView.frame.size)
+        gameScene.anchorPoint = CGPoint(x: 0, y: 0)
+        gameScene.isPaused = false
+        gameScene.parentVC = self
+        skView.presentScene(gameScene)
+        
+        let panGest = UIPanGestureRecognizer(target: gameScene, action: #selector (gameScene.handlePanGesture))
+        skView.addGestureRecognizer(panGest)
+        panGest.velocity(in: skView)
+    }
+    
     func gameOver(distance: Double, level: Int) {
 //        let defaults = UserDefaults.standard
 //        
@@ -82,5 +86,6 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func unwindToGameVC(segue: UIStoryboardSegue) {
+        createGame()
     }
 }
