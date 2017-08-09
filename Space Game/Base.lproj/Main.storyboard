@@ -29,26 +29,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_clouds" translatesAutoresizingMaskIntoConstraints="NO" id="Eup-fY-FVm">
-                                <rect key="frame" x="-49" y="-0.66666666666668561" width="512" height="736.33333333333326"/>
+                                <rect key="frame" x="-49" y="0.66666666666668561" width="512" height="736"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ASTRO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oW1-xQ-sM8" userLabel="Astro Label">
                                 <rect key="frame" x="71" y="28" width="272" height="95"/>
                                 <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oW1-xQ-sM8" secondAttribute="height" multiplier="272:95" id="EaY-kg-zLq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="04b19" family="04b_19" pointSize="95"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DASH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ugZ-tD-vIc" userLabel="DASH Label">
-                                <rect key="frame" x="98" y="121" width="217" height="95"/>
+                                <rect key="frame" x="98" y="131" width="217" height="95"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ugZ-tD-vIc" secondAttribute="height" multiplier="217:95" id="7Lg-59-MkV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="04b19" family="04b_19" pointSize="95"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0QV-G8-ool">
-                                <rect key="frame" x="134" y="343" width="145" height="50"/>
+                                <rect key="frame" x="134.33333333333331" y="335.33333333333331" width="145.33333333333331" height="65.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0QV-G8-ool" secondAttribute="height" multiplier="29:13" id="wzI-NI-vdf"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="backdrop">
                                     <attributedString key="attributedTitle">
                                         <fragment content="PLAY">
@@ -68,16 +77,16 @@
                         <constraints>
                             <constraint firstItem="oW1-xQ-sM8" firstAttribute="centerX" secondItem="Eup-fY-FVm" secondAttribute="centerX" id="1bR-SR-XQY"/>
                             <constraint firstItem="0QV-G8-ool" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="Aeo-oS-34z"/>
-                            <constraint firstItem="ugZ-tD-vIc" firstAttribute="top" secondItem="oW1-xQ-sM8" secondAttribute="bottom" constant="-2" id="Bg8-bn-vZ9"/>
+                            <constraint firstItem="ugZ-tD-vIc" firstAttribute="top" secondItem="oW1-xQ-sM8" secondAttribute="bottom" constant="8" symbolic="YES" id="Bg8-bn-vZ9"/>
                             <constraint firstItem="ugZ-tD-vIc" firstAttribute="width" secondItem="Eup-fY-FVm" secondAttribute="height" multiplier="217:736" id="Dep-LQ-93r"/>
                             <constraint firstItem="oW1-xQ-sM8" firstAttribute="centerX" secondItem="ugZ-tD-vIc" secondAttribute="centerX" id="RGE-Lw-ZyK"/>
+                            <constraint firstItem="0QV-G8-ool" firstAttribute="width" secondItem="Eup-fY-FVm" secondAttribute="height" multiplier="145:736" id="XNo-nk-lyA"/>
                             <constraint firstItem="oW1-xQ-sM8" firstAttribute="width" secondItem="Eup-fY-FVm" secondAttribute="height" multiplier="17:46" id="abn-hF-l0R"/>
                             <constraint firstItem="oW1-xQ-sM8" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="51" id="dl8-FE-Lph"/>
-                            <constraint firstItem="0QV-G8-ool" firstAttribute="width" secondItem="Eup-fY-FVm" secondAttribute="height" multiplier="145:736" id="fHI-nl-9xg"/>
                             <constraint firstItem="oW1-xQ-sM8" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="8" symbolic="YES" id="k1u-T8-Jv7"/>
-                            <constraint firstItem="0QV-G8-ool" firstAttribute="centerX" secondItem="ugZ-tD-vIc" secondAttribute="centerX" id="lLB-Ch-q1u"/>
                             <constraint firstItem="0QV-G8-ool" firstAttribute="centerY" secondItem="Eup-fY-FVm" secondAttribute="centerY" id="pBi-0R-xEh"/>
                             <constraint firstItem="oW1-xQ-sM8" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="qr3-oh-B8s"/>
+                            <constraint firstItem="0QV-G8-ool" firstAttribute="centerX" secondItem="oW1-xQ-sM8" secondAttribute="centerX" id="vQF-bO-xNF"/>
                         </constraints>
                     </view>
                     <connections>
