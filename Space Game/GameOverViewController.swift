@@ -1,5 +1,5 @@
 //
-//  EndGameViewController.swift
+//  GameOverViewController.swift
 //  Space Game
 //
 //  Created by Mauricio Monsivais on 12/25/16.
@@ -8,20 +8,23 @@
 
 import UIKit
 
-class EndGameViewController: UIViewController {
+class GameOverViewController: UIViewController {
     
     
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var currentScoreLabel: UILabel!
     @IBOutlet weak var hsLabel: UILabel!
 
-    var recievedScore = ""
+    var recievedDistance = ""
+    var recievedLevel = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        currentScoreLabel.font = UIFont(name: "04b_19", size: <#T##CGFloat#>)
 //        currentScoreLabel.text = recievedScore
+        
+        print("Distance = \(recievedDistance) \t Level = \(recievedLevel)")
     }
     
 

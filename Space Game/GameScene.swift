@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 //import QuartzCore
 
 enum GameState{
@@ -16,7 +17,7 @@ enum GameState{
     static var currentGameState = GameState.ready
 }
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    var parentVC: GameViewController!
+    var parentVC: GameViewController! //assigned in VC
     fileprivate var level = 1
     fileprivate let levelToFallSpeed: [Int: CGFloat] = [1: -3.20,
                                                         2: -4.60,
@@ -47,7 +48,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     fileprivate var playerSprite: PlayerSprite!
     fileprivate var asteroid1, asteroid2, asteroid3: Asteroid!
     fileprivate var asteroidPairOf = [Asteroid: Asteroid?]()
-    fileprivate var asteroidSpawnGap: CGFloat? = nil
+    fileprivate var asteroidSpawnGap: CGFloat?
     
     
     func handlePanGesture(_ recognizer: UIPanGestureRecognizer){
