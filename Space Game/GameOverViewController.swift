@@ -24,7 +24,10 @@ class GameOverViewController: UIViewController {
 //        currentScoreLabel.font = UIFont(name: "04b_19", size: <#T##CGFloat#>)
 //        currentScoreLabel.text = recievedScore
         
+        
         print("Distance = \(recievedDistance) \t Level = \(recievedLevel)")
+        let distHighScore = UserDefaults.standard.double(forKey: "highscore")
+        print("HIGHSCORE = \(distHighScore )")
     }
     
 

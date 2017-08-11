@@ -12,7 +12,6 @@
 		224880591E10CB34003E732E /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224880581E10CB34003E732E /* GameOverViewController.swift */; };
 		2248806B1E1612C3003E732E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2248806A1E1612C3003E732E /* GameScene.swift */; };
 		224C5A4B1F331ED600A0C9CC /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C5A4A1F331ED600A0C9CC /* GameOverView.swift */; };
-		2263785E1ED12E49003B1505 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22EE2EF61DDC0D99003188BD /* Info.plist */; };
 		226A97B31E1DDF6A0096515A /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A97B21E1DDF6A0096515A /* Assets.swift */; };
 		226A97B51E1DFFF40096515A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226A97B41E1DFFF40096515A /* Launch Screen.storyboard */; };
 		2276447F1ED40B4E00A4230B /* 04B_19__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 2276447D1ED40B4E00A4230B /* 04B_19__.TTF */; };
@@ -300,7 +299,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "mhm Entertainment";
 				TargetAttributes = {
 					22EE2EE01DDC0D98003188BD = {
@@ -360,7 +359,6 @@
 			files = (
 				227644801ED40B4E00A4230B /* about.gif in Resources */,
 				2276447F1ED40B4E00A4230B /* 04B_19__.TTF in Resources */,
-				2263785E1ED12E49003B1505 /* Info.plist in Resources */,
 				22EE2EF01DDC0D99003188BD /* Main.storyboard in Resources */,
 				226A97B51E1DFFF40096515A /* Launch Screen.storyboard in Resources */,
 				22EE2EF21DDC0D99003188BD /* Assets.xcassets in Resources */,

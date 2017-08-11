@@ -15,9 +15,20 @@ class GameViewController: UIViewController {
     fileprivate var gameScene: GameScene!
     fileprivate let gameHeight: CGFloat = 555
     fileprivate var gameWidth: CGFloat?
-//    fileprivate gameScene: SKScene?
-    fileprivate var distance = 0.0
     fileprivate var level = 0
+    fileprivate var distance = 0.0{
+        didSet{
+            let distHighScore = UserDefaults.standard.double(forKey: "highScore")
+                if distHighScore < distance
+                {
+                    UserDefaults.standard.set(distance, forKey: "highscore")
+                }
+            }
+    }
+    
+    @IBAction func unwindToGameVC(segue: UIStoryboardSegue) {
+        createGame()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,19 +85,8 @@ class GameViewController: UIViewController {
     }
     
     func gameOver(distance: Double, level: Int) {
-//        let defaults = UserDefaults.standard
-//        
-//        if let stringOne = defaults.string(forKey: defaultsKeys.keyOne) {
-//            print(stringOne)
-//            
-//        }
-        
         self.distance = distance
         self.level = level
         performSegue(withIdentifier: "goToGameOver", sender: nil)
-    }
-    
-    @IBAction func unwindToGameVC(segue: UIStoryboardSegue) {
-        createGame()
     }
 }
