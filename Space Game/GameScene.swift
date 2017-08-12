@@ -241,7 +241,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             setAssets()
             addAssets()
             hasBeenCreated = true
-            print("didMove() finished in GameScene")
         }
     }
 }

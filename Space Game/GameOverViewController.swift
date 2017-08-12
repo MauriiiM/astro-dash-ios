@@ -25,8 +25,8 @@ class GameOverViewController: UIViewController {
 //        currentScoreLabel.text = recievedScore
         
         
-        print("Distance = \(recievedDistance) \t Level = \(recievedLevel)")
-        let distHighScore = UserDefaults.standard.double(forKey: "highscore")
+        print("Distance = \(recievedDistance) \tLevel = \(recievedLevel)")
+        let distHighScore = UserDefaults.standard.double(forKey: "highScore")
         print("HIGHSCORE = \(distHighScore )")
     }
     

@@ -21,7 +21,7 @@ class GameViewController: UIViewController {
             let distHighScore = UserDefaults.standard.double(forKey: "highScore")
                 if distHighScore < distance
                 {
-                    UserDefaults.standard.set(distance, forKey: "highscore")
+                    UserDefaults.standard.set(distance, forKey: "highScore")
                 }
             }
     }
@@ -37,6 +37,7 @@ class GameViewController: UIViewController {
         {
             Assets.loadMenuAssets()
             Assets.loadGameAssets()
+            print("DEBUG = ON (from GameVC viewDidLoad()")
         }
 
         skView = self.view as! SKView
@@ -45,8 +46,6 @@ class GameViewController: UIViewController {
         skView.showsNodeCount = true
         
         createGame()
-        
-        print("viewDidLoad() finished in GameViewController")
     }
     
     override func didReceiveMemoryWarning() {
