@@ -11,6 +11,9 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    override var prefersStatusBarHidden: Bool { return true }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .portrait }
+    override var shouldAutorotate: Bool { return false }
     fileprivate var skView: SKView!
     fileprivate var gameScene: GameScene!
     fileprivate let gameHeight: CGFloat = 555
@@ -37,14 +40,13 @@ class GameViewController: UIViewController {
         {
             Assets.loadMenuAssets()
             Assets.loadGameAssets()
+            skView.showsFPS = true
+            skView.showsPhysics = true
+            skView.showsNodeCount = true
             print("DEBUG = ON (from GameVC viewDidLoad()")
         }
 
         skView = self.view as! SKView
-        skView.showsFPS = true
-        skView.showsPhysics = true
-        skView.showsNodeCount = true
-        
         createGame()
     }
     
@@ -52,26 +54,14 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let gameOverVC = segue.destination as! GameOverViewController
         gameOverVC.recievedDistance = String.localizedStringWithFormat("%.2f %@", distance, "")
         gameOverVC.recievedLevel = String(level)
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
-    }
-    
-    override var shouldAutorotate: Bool {
-        return false
-    }
-    
-    func createGame(){
+    private func createGame(){
         gameScene = GameScene(size: skView.frame.size)
         gameScene.anchorPoint = CGPoint(x: 0, y: 0)
         gameScene.isPaused = false

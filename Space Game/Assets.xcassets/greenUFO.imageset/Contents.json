@@ -5,17 +5,17 @@
   },
   "images" : [
     {
-      "filename" : "ufo~universal@1x.png",
+      "filename" : "greenUFO~universal@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ufo~universal@2x.png",
+      "filename" : "greenUFO~universal@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ufo~universal@3x.png",
+      "filename" : "greenUFO~universal@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
