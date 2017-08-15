@@ -10,10 +10,13 @@ import UIKit
 
 class GameOverView: UIView {
     
-    @IBOutlet weak var gameLabel: UILabel!
-    @IBOutlet weak var overLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var currentScoreLabel: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel!
     
-    func setupTitleLabels(){
+    func setScoreLabels(level: Int, currentScore curr: Double, highScore hs: Double){
+        levelLabel.text = String(level)
+        currentScoreLabel.text = String.localizedStringWithFormat("%.2f %@", curr)
+        highScoreLabel.text = String.localizedStringWithFormat("%.2f %@", hs)
     }
-    
 }
