@@ -18,14 +18,16 @@ class GameViewController: UIViewController {
     fileprivate var gameScene: GameScene!
     fileprivate let gameHeight: CGFloat = 555
     fileprivate var gameWidth: CGFloat?
+    fileprivate var newHighScore = false
     fileprivate var level = 0
     fileprivate var distance = 0.0{
         didSet{
             let distHighScore = UserDefaults.standard.double(forKey: "highScore")
-                if distHighScore < distance
+                if distance > distHighScore
                 {
                     UserDefaults.standard.set(distance, forKey: "highScore")
-                }
+                    newHighScore = true
+                } else { newHighScore = false }
             }
     }
     
@@ -59,6 +61,7 @@ class GameViewController: UIViewController {
         let gameOverVC = segue.destination as! GameOverViewController
         gameOverVC.recievedDistance = distance
         gameOverVC.recievedLevel = level
+        gameOverVC.newHighScore = newHighScore
     }
     
     private func createGame(){

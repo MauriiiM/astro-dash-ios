@@ -12,7 +12,6 @@
 		224880571E10CB14003E732E /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224880561E10CB14003E732E /* MainMenuViewController.swift */; };
 		224880591E10CB34003E732E /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224880581E10CB34003E732E /* GameOverViewController.swift */; };
 		2248806B1E1612C3003E732E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2248806A1E1612C3003E732E /* GameScene.swift */; };
-		224C5A4B1F331ED600A0C9CC /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C5A4A1F331ED600A0C9CC /* GameOverView.swift */; };
 		226A97B31E1DDF6A0096515A /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A97B21E1DDF6A0096515A /* Assets.swift */; };
 		226A97B51E1DFFF40096515A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226A97B41E1DFFF40096515A /* Launch Screen.storyboard */; };
 		2276447F1ED40B4E00A4230B /* 04B_19__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 2276447D1ED40B4E00A4230B /* 04B_19__.TTF */; };
@@ -50,7 +49,6 @@
 		224880561E10CB14003E732E /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		224880581E10CB34003E732E /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		2248806A1E1612C3003E732E /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		224C5A4A1F331ED600A0C9CC /* GameOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		226A97B21E1DDF6A0096515A /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		226A97B41E1DFFF40096515A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2276447D1ED40B4E00A4230B /* 04B_19__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04B_19__.TTF; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				224880581E10CB34003E732E /* GameOverViewController.swift */,
-				224C5A4A1F331ED600A0C9CC /* GameOverView.swift */,
 			);
 			name = gameoverview;
 			sourceTree = "<group>";
@@ -390,7 +387,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224C5A4B1F331ED600A0C9CC /* GameOverView.swift in Sources */,
 				22EE2EED1DDC0D99003188BD /* GameViewController.swift in Sources */,
 				224880571E10CB14003E732E /* MainMenuViewController.swift in Sources */,
 				22EE2EE51DDC0D99003188BD /* AppDelegate.swift in Sources */,

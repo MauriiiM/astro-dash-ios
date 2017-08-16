@@ -49,6 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     fileprivate var asteroid1, asteroid2, asteroid3: Asteroid!
     fileprivate var asteroidPairOf = [Asteroid: Asteroid?]()
     fileprivate var asteroidSpawnGap: CGFloat?
+    fileprivate var audioPlayer: AVAudioPlayer?
     
     
     func handlePanGesture(_ recognizer: UIPanGestureRecognizer){
@@ -90,6 +91,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             asteroidPairOf[asteroid] = Asteroid(at: pairPoint, texture: asteroid1.texture!, size: asteroid1.size)
             self.addChild(asteroidPairOf[asteroid]!!)
+        }
+    }
+    
+    //https://stackoverflow.com/questions/32036146/how-to-play-a-sound-in-swift
+    //Also a bug in xcode, this unfortunately prints out unwanted AQDefaultDevice log
+    fileprivate func playCollisionSound(){
+        guard let url = Bundle.main.url(forResource: "dead", withExtension: "mp3") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            guard let player = audioPlayer else { return }
+            
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
@@ -176,6 +195,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //called automatically by PhysicsBodyDelegate when an asteroid object hits a player object
     func didBegin(_ contact: SKPhysicsContact) {
         isPaused = true //needed because for some reason, it will detect a few more collisions
+        playCollisionSound()
         parentVC.gameOver(distance: distTravelled, level: level)
         GameState.currentGameState = .ready
         

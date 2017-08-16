@@ -12,18 +12,21 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var currentScoreLabel: UILabel!
     @IBOutlet weak var highScoreLabel: UILabel!
+    @IBOutlet weak var newHSLabel: UILabel!
     
     var recievedDistance = 0.0
     var recievedLevel = 0
+    var newHighScore = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let distHighScore = UserDefaults.standard.double(forKey: "highScore")
-        print("Distance = \(recievedDistance) \tLevel = \(recievedLevel)")
-        print("HIGHSCORE = \(distHighScore )")
-        
+    
         setScoreLabels(level: recievedLevel, currentScore: recievedDistance, highScore: distHighScore)
+        if newHighScore == true {
+            newHSLabel.isHidden = false
+        }
     }
     
 

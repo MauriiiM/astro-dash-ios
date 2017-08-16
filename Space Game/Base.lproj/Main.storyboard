@@ -155,7 +155,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="yQc-be-zc0" userLabel="Level">
-                                <rect key="frame" x="61" y="273" width="53" height="20"/>
+                                <rect key="frame" x="61" y="273" width="53" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yQc-be-zc0" secondAttribute="height" multiplier="57:22" id="9rl-H6-uOX"/>
                                 </constraints>
@@ -164,7 +164,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="justified" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AM6-ET-1nn" userLabel="Level Score">
-                                <rect key="frame" x="61" y="303" width="62" height="81"/>
+                                <rect key="frame" x="61" y="303.5" width="62" height="81"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AM6-ET-1nn" secondAttribute="height" multiplier="67:88" id="sny-tA-b4z"/>
@@ -174,7 +174,7 @@
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="QW6-yG-xG5" userLabel="Current label">
-                                <rect key="frame" x="250" y="273" width="81" height="20"/>
+                                <rect key="frame" x="250" y="273" width="81" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QW6-yG-xG5" secondAttribute="height" multiplier="4:1" id="xST-8H-JNg"/>
                                 </constraints>
@@ -183,7 +183,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MILLION" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="ln4-cB-eor" userLabel="Million 1">
-                                <rect key="frame" x="275" y="295" width="56.5" height="16.5"/>
+                                <rect key="frame" x="274.5" y="295.5" width="57" height="16.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ln4-cB-eor" secondAttribute="height" multiplier="31:9" id="dUm-fU-0a3"/>
                                 </constraints>
@@ -192,7 +192,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KM" textAlignment="right" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="lR7-OQ-rsv" userLabel="KM 1">
-                                <rect key="frame" x="307.5" y="309.5" width="24" height="16"/>
+                                <rect key="frame" x="307.5" y="310" width="24" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lR7-OQ-rsv" secondAttribute="height" multiplier="13:9" id="LjB-lB-gy6"/>
                                 </constraints>
@@ -201,7 +201,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIGH SCORE" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="32w-V1-Zdt" userLabel="High Score">
-                                <rect key="frame" x="224" y="333" width="107" height="20"/>
+                                <rect key="frame" x="223.5" y="333.5" width="107.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="32w-V1-Zdt" secondAttribute="height" multiplier="117:22" id="r9C-6W-o3N"/>
                                 </constraints>
@@ -210,7 +210,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MILLION" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="Nja-vU-0XL" userLabel="Million 2">
-                                <rect key="frame" x="275" y="355" width="56" height="16.5"/>
+                                <rect key="frame" x="274.5" y="355.5" width="56.5" height="16.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Nja-vU-0XL" secondAttribute="height" multiplier="31:9" id="agT-ad-6dr"/>
                                 </constraints>
@@ -219,7 +219,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KM" textAlignment="right" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="37X-6e-Jcu" userLabel="KM 2">
-                                <rect key="frame" x="306.5" y="369.5" width="24.5" height="16.5"/>
+                                <rect key="frame" x="306.5" y="370" width="24.5" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="37X-6e-Jcu" secondAttribute="height" multiplier="13:9" id="bba-Qk-c1D"/>
                                 </constraints>
@@ -249,7 +249,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="Q9w-cV-a0U" userLabel="Current Score">
-                                <rect key="frame" x="199.5" y="295" width="70" height="35"/>
+                                <rect key="frame" x="199.5" y="295.5" width="70" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Q9w-cV-a0U" secondAttribute="height" multiplier="2:1" id="P18-V9-W3E"/>
                                 </constraints>
@@ -258,11 +258,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="hs2-AI-aGB" userLabel="Current Score">
-                                <rect key="frame" x="199.5" y="355" width="70" height="35.5"/>
+                                <rect key="frame" x="199.5" y="355.5" width="70" height="35.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hs2-AI-aGB" secondAttribute="height" multiplier="55:27" constant="-1.407407407407419" id="Fdh-AQ-0wi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="04b19" family="04b_19" pointSize="38"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="slG-wO-ABI" userLabel="High Score">
+                                <rect key="frame" x="172" y="332.5" width="43.5" height="22"/>
+                                <color key="backgroundColor" red="0.89871959516844768" green="0.042035665609665221" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="slG-wO-ABI" secondAttribute="height" multiplier="2:1" id="6WQ-JL-r2N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="04b19" family="04b_19" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -271,11 +281,13 @@
                         <constraints>
                             <constraint firstItem="ln4-cB-eor" firstAttribute="top" secondItem="QW6-yG-xG5" secondAttribute="bottom" constant="2" id="1WU-TA-B6G"/>
                             <constraint firstItem="AM6-ET-1nn" firstAttribute="leading" secondItem="yQc-be-zc0" secondAttribute="leading" id="2vF-BN-NW8"/>
+                            <constraint firstItem="slG-wO-ABI" firstAttribute="width" secondItem="1f9-xR-78b" secondAttribute="height" multiplier="44:151" id="323-SS-0Sb"/>
                             <constraint firstItem="lR7-OQ-rsv" firstAttribute="width" secondItem="1f9-xR-78b" secondAttribute="height" multiplier="26:165" id="52s-hD-1qw"/>
                             <constraint firstItem="lR7-OQ-rsv" firstAttribute="top" secondItem="ln4-cB-eor" secondAttribute="bottom" constant="-2" id="59f-fO-Zz4"/>
                             <constraint firstItem="lR7-OQ-rsv" firstAttribute="trailing" secondItem="QW6-yG-xG5" secondAttribute="trailing" id="71x-Bd-rT5"/>
                             <constraint firstItem="1f9-xR-78b" firstAttribute="top" secondItem="yQc-be-zc0" secondAttribute="top" constant="-15" id="7TO-xe-2av"/>
                             <constraint firstItem="ln4-cB-eor" firstAttribute="trailing" secondItem="QW6-yG-xG5" secondAttribute="trailing" id="91p-on-uWG"/>
+                            <constraint firstItem="32w-V1-Zdt" firstAttribute="leading" secondItem="slG-wO-ABI" secondAttribute="trailing" constant="8" id="Bic-0h-Bo7"/>
                             <constraint firstItem="m4y-ot-vde" firstAttribute="width" secondItem="vsV-wz-Al4" secondAttribute="height" multiplier="195:736" id="Cd9-4K-CUc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QW6-yG-xG5" secondAttribute="trailing" constant="28" id="D3K-Pt-xiH"/>
                             <constraint firstItem="g7Q-42-jQk" firstAttribute="centerX" secondItem="vsV-wz-Al4" secondAttribute="centerX" id="EHU-3S-5dK"/>
@@ -294,6 +306,7 @@
                             <constraint firstItem="QW6-yG-xG5" firstAttribute="top" secondItem="yQc-be-zc0" secondAttribute="top" id="RGJ-ri-ALI"/>
                             <constraint firstItem="37X-6e-Jcu" firstAttribute="width" secondItem="1f9-xR-78b" secondAttribute="height" multiplier="26:165" id="Tui-55-U11"/>
                             <constraint firstItem="Nja-vU-0XL" firstAttribute="width" secondItem="1f9-xR-78b" secondAttribute="height" multiplier="62:165" id="UIK-Uu-Jeo"/>
+                            <constraint firstItem="slG-wO-ABI" firstAttribute="centerY" secondItem="32w-V1-Zdt" secondAttribute="centerY" id="UyS-cM-y1c"/>
                             <constraint firstItem="1f9-xR-78b" firstAttribute="trailing" secondItem="44K-b3-8EZ" secondAttribute="trailingMargin" id="YdJ-7C-9Se"/>
                             <constraint firstItem="1f9-xR-78b" firstAttribute="centerY" secondItem="vsV-wz-Al4" secondAttribute="centerY" id="Ydo-S9-Q6Z"/>
                             <constraint firstItem="dcT-qk-JZp" firstAttribute="top" secondItem="vsV-wz-Al4" secondAttribute="bottom" id="afH-sU-b3h"/>
@@ -322,6 +335,7 @@
                         <outlet property="currentScoreLabel" destination="Q9w-cV-a0U" id="Dxa-EE-mTJ"/>
                         <outlet property="highScoreLabel" destination="hs2-AI-aGB" id="AVd-fd-jkd"/>
                         <outlet property="levelLabel" destination="AM6-ET-1nn" id="0xi-bf-Aoi"/>
+                        <outlet property="newHSLabel" destination="slG-wO-ABI" id="rYZ-e7-DsN"/>
                     </connections>
                 </viewController>
                 <exit id="u20-ml-dE1" userLabel="Exit" sceneMemberID="exit"/>
