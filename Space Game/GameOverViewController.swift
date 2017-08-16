@@ -9,34 +9,34 @@
 import UIKit
 
 class GameOverViewController: UIViewController {
-    
-    
-    @IBOutlet weak var restartButton: UIButton!
+    @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var currentScoreLabel: UILabel!
-    @IBOutlet weak var hsLabel: UILabel!
-
-    var recievedDistance = ""
-    var recievedLevel = ""
+    @IBOutlet weak var highScoreLabel: UILabel!
+    
+    var recievedDistance = 0.0
+    var recievedLevel = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        currentScoreLabel.font = UIFont(name: "04b_19", size: <#T##CGFloat#>)
-//        currentScoreLabel.text = recievedScore
-        
-        
-        print("Distance = \(recievedDistance) \tLevel = \(recievedLevel)")
         let distHighScore = UserDefaults.standard.double(forKey: "highScore")
+        print("Distance = \(recievedDistance) \tLevel = \(recievedLevel)")
         print("HIGHSCORE = \(distHighScore )")
+        
+        setScoreLabels(level: recievedLevel, currentScore: recievedDistance, highScore: distHighScore)
     }
     
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
+    
+    func setScoreLabels(level: Int, currentScore curr: Double, highScore hs: Double){
+        levelLabel.text = String(level)
+        currentScoreLabel.text = String.localizedStringWithFormat("%.2f %@", curr, "")
+        highScoreLabel.text = String.localizedStringWithFormat("%.2f %@", hs, "")
+    }
     
     /*
     // MARK: - Navigation

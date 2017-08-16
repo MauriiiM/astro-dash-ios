@@ -57,8 +57,8 @@ class GameViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let gameOverVC = segue.destination as! GameOverViewController
-        gameOverVC.recievedDistance = String.localizedStringWithFormat("%.2f %@", distance, "")
-        gameOverVC.recievedLevel = String(level)
+        gameOverVC.recievedDistance = distance
+        gameOverVC.recievedLevel = level
     }
     
     private func createGame(){
