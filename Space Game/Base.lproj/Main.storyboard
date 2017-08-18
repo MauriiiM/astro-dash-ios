@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -25,14 +25,14 @@
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_clouds" translatesAutoresizingMaskIntoConstraints="NO" id="Eup-fY-FVm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736.66666666666663"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ASTRO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oW1-xQ-sM8" userLabel="Astro Label">
-                                <rect key="frame" x="67" y="28" width="241" height="84"/>
+                                <rect key="frame" x="71" y="28" width="272" height="95"/>
                                 <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <constraints>
@@ -44,7 +44,7 @@
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DASH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ugZ-tD-vIc" userLabel="DASH Label">
-                                <rect key="frame" x="89" y="120" width="197" height="86.5"/>
+                                <rect key="frame" x="98.333333333333314" y="131" width="217.33333333333337" height="95"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ugZ-tD-vIc" secondAttribute="height" multiplier="217:95" id="7Lg-59-MkV"/>
@@ -54,7 +54,7 @@
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0QV-G8-ool">
-                                <rect key="frame" x="151" y="317" width="74" height="33"/>
+                                <rect key="frame" x="151.66666666666669" y="343" width="111.66666666666669" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0QV-G8-ool" secondAttribute="height" multiplier="29:13" id="wzI-NI-vdf"/>
                                 </constraints>
@@ -100,7 +100,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fRt-qR-N5N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5rw-7i-kV7" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -121,14 +121,14 @@
                         <viewControllerLayoutGuide type="bottom" id="dcT-qk-JZp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="44K-b3-8EZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_clouds" translatesAutoresizingMaskIntoConstraints="NO" id="vsV-wz-Al4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000000000002" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g7Q-42-jQk" userLabel="Game">
-                                <rect key="frame" x="89" y="20" width="198" height="76.5"/>
+                                <rect key="frame" x="98.666666666666686" y="20" width="218" height="84.666666666666671"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="g7Q-42-jQk" secondAttribute="height" multiplier="219:85" id="UMY-eR-gUQ"/>
@@ -139,7 +139,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" layoutMarginsFollowReadableWidth="NO"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OVER" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000000000002" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4y-ot-vde" userLabel="Over">
-                                <rect key="frame" x="100.5" y="104.5" width="176.5" height="77"/>
+                                <rect key="frame" x="110.66666666666666" y="112.66666666666666" width="195.33333333333334" height="84.999999999999972"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="m4y-ot-vde" secondAttribute="height" multiplier="39:17" id="moI-nh-icw"/>
@@ -149,13 +149,13 @@
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backdrop" translatesAutoresizingMaskIntoConstraints="NO" id="1f9-xR-78b">
-                                <rect key="frame" x="16" y="258" width="343" height="151"/>
+                                <rect key="frame" x="20" y="285.66666666666669" width="374" height="165"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1f9-xR-78b" secondAttribute="height" multiplier="34:15" id="oa8-Z8-jTx"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="yQc-be-zc0" userLabel="Level">
-                                <rect key="frame" x="61" y="273" width="53" height="20.5"/>
+                                <rect key="frame" x="65" y="300.66666666666674" width="57.666666666666671" height="22.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yQc-be-zc0" secondAttribute="height" multiplier="57:22" id="9rl-H6-uOX"/>
                                 </constraints>
@@ -164,7 +164,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="justified" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AM6-ET-1nn" userLabel="Level Score">
-                                <rect key="frame" x="61" y="303.5" width="62" height="81"/>
+                                <rect key="frame" x="65" y="333" width="67.333333333333343" height="88.333333333333314"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AM6-ET-1nn" secondAttribute="height" multiplier="67:88" id="sny-tA-b4z"/>
@@ -174,7 +174,7 @@
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="QW6-yG-xG5" userLabel="Current label">
-                                <rect key="frame" x="250" y="273" width="81" height="20.5"/>
+                                <rect key="frame" x="277.66666666666674" y="300.66666666666669" width="88.333333333333314" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QW6-yG-xG5" secondAttribute="height" multiplier="4:1" id="xST-8H-JNg"/>
                                 </constraints>
@@ -183,7 +183,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MILLION" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="ln4-cB-eor" userLabel="Million 1">
-                                <rect key="frame" x="274.5" y="295.5" width="57" height="16.5"/>
+                                <rect key="frame" x="304.33333333333331" y="324.66666666666674" width="62.333333333333371" height="18.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ln4-cB-eor" secondAttribute="height" multiplier="31:9" id="dUm-fU-0a3"/>
                                 </constraints>
@@ -192,7 +192,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KM" textAlignment="right" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="lR7-OQ-rsv" userLabel="KM 1">
-                                <rect key="frame" x="307.5" y="310" width="24" height="16"/>
+                                <rect key="frame" x="340.66666666666669" y="341" width="26" height="17.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lR7-OQ-rsv" secondAttribute="height" multiplier="13:9" id="LjB-lB-gy6"/>
                                 </constraints>
@@ -201,7 +201,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIGH SCORE" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="32w-V1-Zdt" userLabel="High Score">
-                                <rect key="frame" x="223.5" y="333.5" width="107.5" height="20"/>
+                                <rect key="frame" x="248.66666666666663" y="362.66666666666669" width="117.33333333333337" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="32w-V1-Zdt" secondAttribute="height" multiplier="117:22" id="r9C-6W-o3N"/>
                                 </constraints>
@@ -210,7 +210,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MILLION" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="Nja-vU-0XL" userLabel="Million 2">
-                                <rect key="frame" x="274.5" y="355.5" width="56.5" height="16.5"/>
+                                <rect key="frame" x="304.33333333333326" y="386.66666666666669" width="61.666666666666686" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Nja-vU-0XL" secondAttribute="height" multiplier="31:9" id="agT-ad-6dr"/>
                                 </constraints>
@@ -219,7 +219,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KM" textAlignment="right" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="37X-6e-Jcu" userLabel="KM 2">
-                                <rect key="frame" x="306.5" y="370" width="24.5" height="17"/>
+                                <rect key="frame" x="339.66666666666674" y="402.66666666666674" width="26.333333333333314" height="18.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="37X-6e-Jcu" secondAttribute="height" multiplier="13:9" id="bba-Qk-c1D"/>
                                 </constraints>
@@ -228,7 +228,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8T6-jY-j93" userLabel="Restart Button">
-                                <rect key="frame" x="242" y="416" width="113" height="50"/>
+                                <rect key="frame" x="281" y="457.66666666666669" width="113" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9oX-He-QMU"/>
                                     <constraint firstAttribute="width" constant="113" id="nT2-Xd-gxa"/>
@@ -245,11 +245,11 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="u20-ml-dE1" kind="unwind" unwindAction="unwindToGameVCWithSegue:" id="nSZ-cx-PEE"/>
+                                    <segue destination="u20-ml-dE1" kind="unwind" animates="NO" unwindAction="unwindToGameVCWithSegue:" id="nSZ-cx-PEE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="Q9w-cV-a0U" userLabel="Current Score">
-                                <rect key="frame" x="199.5" y="295.5" width="70" height="35"/>
+                                <rect key="frame" x="223.33333333333331" y="324.66666666666674" width="75.999999999999943" height="38.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Q9w-cV-a0U" secondAttribute="height" multiplier="2:1" id="P18-V9-W3E"/>
                                 </constraints>
@@ -258,7 +258,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="hs2-AI-aGB" userLabel="Current Score">
-                                <rect key="frame" x="199.5" y="355.5" width="70" height="35.5"/>
+                                <rect key="frame" x="223.33333333333331" y="386.66666666666674" width="75.999999999999943" height="38.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hs2-AI-aGB" secondAttribute="height" multiplier="55:27" constant="-1.407407407407419" id="Fdh-AQ-0wi"/>
                                 </constraints>
@@ -266,8 +266,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="slG-wO-ABI" userLabel="High Score">
-                                <rect key="frame" x="172" y="332.5" width="43.5" height="22"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="slG-wO-ABI" userLabel="High Score">
+                                <rect key="frame" x="192.66666666666666" y="362" width="48" height="24"/>
                                 <color key="backgroundColor" red="0.89871959516844768" green="0.042035665609665221" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="slG-wO-ABI" secondAttribute="height" multiplier="2:1" id="6WQ-JL-r2N"/>
@@ -345,7 +345,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backdrop" width="6" height="7"/>
+        <image name="backdrop" width="66" height="50"/>
         <image name="background_clouds" width="512" height="1280"/>
     </resources>
 </document>

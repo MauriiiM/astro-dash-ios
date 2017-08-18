@@ -20,7 +20,7 @@ class Asteroid: FallingNode {
         let attributes = setAttributes(level: level)
         size = attributes.size
         texture = attributes.texture
-        setupPhysicsBody()//remakes phsyics body to new texture, needed or texture will stay same
+        setupPhysicsBody()//remakes phsyics body to new texture, needed or body outline will stay same
     }
     
     //creates size and texture of asteroid based on what level player is currently in

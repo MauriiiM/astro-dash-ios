@@ -19,14 +19,14 @@ enum GameState{
 class GameScene: SKScene, SKPhysicsContactDelegate {
     var parentVC: GameViewController! //assigned in VC
     fileprivate var level = 1
-    fileprivate let levelToFallSpeed: [Int: CGFloat] = [1: -3.20,
-                                                        2: -4.60,
-                                                        3: -4.35,
-                                                        4: -4.30,
-                                                        5: -4.70,
-                                                        6: -4.35,
-                                                        7: -4.70,
-                                                        8: -4.95]
+    fileprivate let levelToFallSpeed: [Int: CGFloat] = [1: -3.00,
+                                                        2: -4.30,
+                                                        3: -4.05,
+                                                        4: -4.00,
+                                                        5: -4.40,
+                                                        6: -4.05,
+                                                        7: -4.40,
+                                                        8: -4.65]
     fileprivate var hasBeenCreated = false
     fileprivate var readyTopLabel = SKLabelNode(fontNamed: "04b_19")
     fileprivate var readyBottomLabel = SKLabelNode(fontNamed: "04b_19")
@@ -82,9 +82,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if astWidth <= size.width / 3.9 {
             asteroid.hasPair = true
             asteroid.position.x = random(min: 0, max: size.width/2)
-            // print("PAIR HERE \(size.width/2 - astWidth/2)")
             
-            //for some reason, 1.9 gives it just enough room to pass
+            //for some reason, 1.9 gives it just enough room to pass instead of 1 playerSprite(?)
             let pairX = random(min: asteroid.position.x + (1.95 * playerSprite.size.width),
                                max: size.width)
             let pairPoint = CGPoint(x: pairX, y:asteroid.position.y - asteroid1.size.height/2)
@@ -135,10 +134,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                     texture: Assets.greenUFO)
         
         let asteroidSize = CGSize(width: Assets.asteroid1.size().width * 1.35, height: Assets.asteroid1.size().width * 1.35)
-        var asteroidSpawnX = random(min: 0, max: size.width)
+        var asteroidSpawnX = random(min: 0, max: size.width)//because anchor point of asteroid is at asteroid.x/2, 0 is half of asteroid
         asteroid1 = Asteroid(at: CGPoint(x: asteroidSpawnX,
                                          y: self.frame.height + asteroidSize.height/2),
-                             texture: Assets.asteroid1,                             size: asteroidSize)
+                             texture: Assets.asteroid1,
+                             size: asteroidSize)
+//        addAsteroidPair(for: asteroid1)
         
         asteroidSpawnX = random(min: 0, max: size.width)
         asteroid2 = Asteroid(at: CGPoint(x: asteroidSpawnX,
@@ -212,9 +213,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             lastUpdateTimeInterval = currentTime
             if dt > 1.0 { dt = 1.0 }
             distTravVelocity = Double(abs(levelToFallSpeed[level]!))
-            distTravelled += (distTravVelocity * dt) * 0.035//0.035 is an Android-match approx. correction
-            
-            //            print("distTrav = \(distTravelled) \n level = \(level)" )
+            distTravelled += (distTravVelocity * dt) * 0.035//0.035 is an Android-match approx. correction/offset
             
             playerSprite.update()
             asteroid1.update(deltaTime: dt)
@@ -224,7 +223,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             asteroidPairOf[asteroid1]??.update(deltaTime: dt)
             asteroidPairOf[asteroid2]??.update(deltaTime: dt)
             asteroidPairOf[asteroid3]??.update(deltaTime: dt)
-            
             
             //below is to reset random x-coordinate and calculated/random y-coordinate
             let playerPosX = playerSprite.position.x
