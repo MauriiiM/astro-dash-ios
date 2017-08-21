@@ -1,0 +1,702 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C1BC858D143D7F37F9E092F7190A298 /* Pods-Space GameUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C165C7A7596A32BE7BD01FBB261779 /* Pods-Space GameUITests-dummy.m */; };
+		1CC12DB151AE408091BE6638BAD1F64D /* Pods-Space GameTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F1DEDACEA19A37864F97C8977E90C93D /* Pods-Space GameTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BBC5D4C36399AC9A4A4631870BF7533 /* Pods-Space GameTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A375D09074AB7E3C503806BA91858 /* Pods-Space GameTests-dummy.m */; };
+		82C0AE3E17FECBC1A5F94C8B4CFC47C9 /* Pods-Space Game-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 76300FB7370A397F643BB7F6126455F9 /* Pods-Space Game-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94B8B584260300E3C1FD7F66F9101EF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		E6ED0596F2879C9087069EC84522AC29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		EE3133803FBC06ACB21DF03FFC8C1CCD /* Pods-Space Game-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A229CF1BF95F8E6C25BB358452510A /* Pods-Space Game-dummy.m */; };
+		F352CBFF4175FE5385A84CC859C62B22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		FCAE7DA00C0DC37329BC19488ED8D9CB /* Pods-Space GameUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 36F9520E5A83989F679733E6BCDDF0DD /* Pods-Space GameUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		056BF22E989F895A9172C7C0DF7B9820 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C529DDE2E72D97FDFA3CF7E46877ECD /* Pods-Space Game-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Space Game-frameworks.sh"; sourceTree = "<group>"; };
+		0E152E416D4360B90EF5B3617CD9F4EE /* Pods-Space GameTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Space GameTests-frameworks.sh"; sourceTree = "<group>"; };
+		300F155802A1492D92C9A294BD1B759C /* Pods-Space Game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Space Game.debug.xcconfig"; sourceTree = "<group>"; };
+		36F9520E5A83989F679733E6BCDDF0DD /* Pods-Space GameUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Space GameUITests-umbrella.h"; sourceTree = "<group>"; };
+		3A27BDC4544549DB940659C767C7F94F /* Pods-Space GameUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Space GameUITests.modulemap"; sourceTree = "<group>"; };
+		4E4170814922ED3F2FC18C84EAD6DDF5 /* Pods_Space_Game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Space_Game.framework; path = "Pods-Space Game.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		54A229CF1BF95F8E6C25BB358452510A /* Pods-Space Game-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Space Game-dummy.m"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		688DAEED9DB4ECDEFF7E04E39671A6CE /* Pods-Space GameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Space GameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D3E73E33104DA952C5109030FD36D7B /* Pods-Space GameTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Space GameTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		76300FB7370A397F643BB7F6126455F9 /* Pods-Space Game-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Space Game-umbrella.h"; sourceTree = "<group>"; };
+		78A69FBD2C088BA40C8D9413FF81CC18 /* Pods-Space GameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Space GameUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7C77C4A6C3B9A2449123336BFF63BFAE /* Pods-Space GameUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Space GameUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		881D0E946DA8E18D7B6BEF60FBED386F /* Pods-Space GameUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Space GameUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		89A4C4D52FD19D5D2AF63D4229C6498C /* Pods-Space GameUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Space GameUITests-resources.sh"; sourceTree = "<group>"; };
+		8E5DB6CE284126CC20F9C3C3C347E34B /* Pods_Space_GameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Space_GameUITests.framework; path = "Pods-Space GameUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D01CBA345AC3A1372676040330D843E /* Pods-Space Game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Space Game.release.xcconfig"; sourceTree = "<group>"; };
+		B950AE06E14061829E49CEDD7D6147C0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1C165C7A7596A32BE7BD01FBB261779 /* Pods-Space GameUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Space GameUITests-dummy.m"; sourceTree = "<group>"; };
+		C528BAED33051FA6A4D7E5BFC4FC4A34 /* Pods-Space Game-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Space Game-resources.sh"; sourceTree = "<group>"; };
+		C621D0C41BC0EA0A4A3DF699B91F2BD1 /* Pods-Space Game-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Space Game-acknowledgements.plist"; sourceTree = "<group>"; };
+		CEB2CC332682C71F5DE7F269912FE311 /* Pods_Space_GameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Space_GameTests.framework; path = "Pods-Space GameTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF7E684C5096C2F8F2C9528B3CF7F2EC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D08A375D09074AB7E3C503806BA91858 /* Pods-Space GameTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Space GameTests-dummy.m"; sourceTree = "<group>"; };
+		D6A33794C3738159B2B2033A0DB3D774 /* Pods-Space Game-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Space Game-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E0234C499EA5F576F287130D45488B0F /* Pods-Space Game.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Space Game.modulemap"; sourceTree = "<group>"; };
+		E1B0DDD913339EF9C953181637B1DD18 /* Pods-Space GameTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Space GameTests-resources.sh"; sourceTree = "<group>"; };
+		E4874744E6BBE0A3A53035EFA3AF0DB7 /* Pods-Space GameUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Space GameUITests-frameworks.sh"; sourceTree = "<group>"; };
+		EBAF3EDEAD8CCB8299FF8EEF9D33E960 /* Pods-Space GameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Space GameTests.release.xcconfig"; sourceTree = "<group>"; };
+		ECCBEADCF6C99370CC67E670CB6DDB34 /* Pods-Space GameTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Space GameTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EDC63300E01B61CBFCD6FC6738598F94 /* Pods-Space GameTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Space GameTests.modulemap"; sourceTree = "<group>"; };
+		F1DEDACEA19A37864F97C8977E90C93D /* Pods-Space GameTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Space GameTests-umbrella.h"; sourceTree = "<group>"; };
+		F87BBE855D70C2F87C02A1CCA30E262D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		FD2050676128AA5D4EAE822AE18089BA /* Pods-Space GameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Space GameUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		989CA4DA8E7399F2FD6FDF866E72B105 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6ED0596F2879C9087069EC84522AC29 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC30B629296E9D17B93F10B821AC2DB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94B8B584260300E3C1FD7F66F9101EF8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD67038C9EDA403EBFA63BC22E90EBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F352CBFF4175FE5385A84CC859C62B22 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				820FBBDA65C5B1A6A4C379A893C27235 /* Pods */,
+				BC75A0B845D6E0082AFDDB28572AECF9 /* Products */,
+				89F8D7A2ABCE486AC1B6F469079B40BC /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		820FBBDA65C5B1A6A4C379A893C27235 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E91D6015731707498AAA5817D350B87B /* Google-Mobile-Ads-SDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		89F8D7A2ABCE486AC1B6F469079B40BC /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9E0BDD81FCAE746717D7DB7E49ADDF3 /* Pods-Space Game */,
+				EE574C92F36D30486C112AF01FBACD44 /* Pods-Space GameTests */,
+				E875924396787DB0B689D354DBC4CE4D /* Pods-Space GameUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		953FD61A3CECC96530CB5CA297A086C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F87BBE855D70C2F87C02A1CCA30E262D /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9E0BDD81FCAE746717D7DB7E49ADDF3 /* Pods-Space Game */ = {
+			isa = PBXGroup;
+			children = (
+				056BF22E989F895A9172C7C0DF7B9820 /* Info.plist */,
+				E0234C499EA5F576F287130D45488B0F /* Pods-Space Game.modulemap */,
+				D6A33794C3738159B2B2033A0DB3D774 /* Pods-Space Game-acknowledgements.markdown */,
+				C621D0C41BC0EA0A4A3DF699B91F2BD1 /* Pods-Space Game-acknowledgements.plist */,
+				54A229CF1BF95F8E6C25BB358452510A /* Pods-Space Game-dummy.m */,
+				0C529DDE2E72D97FDFA3CF7E46877ECD /* Pods-Space Game-frameworks.sh */,
+				C528BAED33051FA6A4D7E5BFC4FC4A34 /* Pods-Space Game-resources.sh */,
+				76300FB7370A397F643BB7F6126455F9 /* Pods-Space Game-umbrella.h */,
+				300F155802A1492D92C9A294BD1B759C /* Pods-Space Game.debug.xcconfig */,
+				9D01CBA345AC3A1372676040330D843E /* Pods-Space Game.release.xcconfig */,
+			);
+			name = "Pods-Space Game";
+			path = "Target Support Files/Pods-Space Game";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC75A0B845D6E0082AFDDB28572AECF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E4170814922ED3F2FC18C84EAD6DDF5 /* Pods_Space_Game.framework */,
+				CEB2CC332682C71F5DE7F269912FE311 /* Pods_Space_GameTests.framework */,
+				8E5DB6CE284126CC20F9C3C3C347E34B /* Pods_Space_GameUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E875924396787DB0B689D354DBC4CE4D /* Pods-Space GameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B950AE06E14061829E49CEDD7D6147C0 /* Info.plist */,
+				3A27BDC4544549DB940659C767C7F94F /* Pods-Space GameUITests.modulemap */,
+				881D0E946DA8E18D7B6BEF60FBED386F /* Pods-Space GameUITests-acknowledgements.markdown */,
+				7C77C4A6C3B9A2449123336BFF63BFAE /* Pods-Space GameUITests-acknowledgements.plist */,
+				C1C165C7A7596A32BE7BD01FBB261779 /* Pods-Space GameUITests-dummy.m */,
+				E4874744E6BBE0A3A53035EFA3AF0DB7 /* Pods-Space GameUITests-frameworks.sh */,
+				89A4C4D52FD19D5D2AF63D4229C6498C /* Pods-Space GameUITests-resources.sh */,
+				36F9520E5A83989F679733E6BCDDF0DD /* Pods-Space GameUITests-umbrella.h */,
+				78A69FBD2C088BA40C8D9413FF81CC18 /* Pods-Space GameUITests.debug.xcconfig */,
+				FD2050676128AA5D4EAE822AE18089BA /* Pods-Space GameUITests.release.xcconfig */,
+			);
+			name = "Pods-Space GameUITests";
+			path = "Target Support Files/Pods-Space GameUITests";
+			sourceTree = "<group>";
+		};
+		E91D6015731707498AAA5817D350B87B /* Google-Mobile-Ads-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				953FD61A3CECC96530CB5CA297A086C1 /* Frameworks */,
+			);
+			name = "Google-Mobile-Ads-SDK";
+			path = "Google-Mobile-Ads-SDK";
+			sourceTree = "<group>";
+		};
+		EE574C92F36D30486C112AF01FBACD44 /* Pods-Space GameTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF7E684C5096C2F8F2C9528B3CF7F2EC /* Info.plist */,
+				EDC63300E01B61CBFCD6FC6738598F94 /* Pods-Space GameTests.modulemap */,
+				ECCBEADCF6C99370CC67E670CB6DDB34 /* Pods-Space GameTests-acknowledgements.markdown */,
+				6D3E73E33104DA952C5109030FD36D7B /* Pods-Space GameTests-acknowledgements.plist */,
+				D08A375D09074AB7E3C503806BA91858 /* Pods-Space GameTests-dummy.m */,
+				0E152E416D4360B90EF5B3617CD9F4EE /* Pods-Space GameTests-frameworks.sh */,
+				E1B0DDD913339EF9C953181637B1DD18 /* Pods-Space GameTests-resources.sh */,
+				F1DEDACEA19A37864F97C8977E90C93D /* Pods-Space GameTests-umbrella.h */,
+				688DAEED9DB4ECDEFF7E04E39671A6CE /* Pods-Space GameTests.debug.xcconfig */,
+				EBAF3EDEAD8CCB8299FF8EEF9D33E960 /* Pods-Space GameTests.release.xcconfig */,
+			);
+			name = "Pods-Space GameTests";
+			path = "Target Support Files/Pods-Space GameTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2A912B3C8F90690BE7617C0DDF1758E7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82C0AE3E17FECBC1A5F94C8B4CFC47C9 /* Pods-Space Game-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DDCFF9EF7F532C66D1376F22A17171E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCAE7DA00C0DC37329BC19488ED8D9CB /* Pods-Space GameUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9523DBCBFA25D3B18A86B11DE7412BE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CC12DB151AE408091BE6638BAD1F64D /* Pods-Space GameTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		692B50B5CDE3BE932355E4F4AF728C5C /* Pods-Space GameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64642C6ADBFC44186CC67905DD62D690 /* Build configuration list for PBXNativeTarget "Pods-Space GameTests" */;
+			buildPhases = (
+				1A39A222BA9DBCDF37251DF552754610 /* Sources */,
+				989CA4DA8E7399F2FD6FDF866E72B105 /* Frameworks */,
+				E9523DBCBFA25D3B18A86B11DE7412BE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Space GameTests";
+			productName = "Pods-Space GameTests";
+			productReference = CEB2CC332682C71F5DE7F269912FE311 /* Pods_Space_GameTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8B3B0129033B2CD4FDBE9551D6F8736E /* Pods-Space GameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C357E24CA49D7922B12ACD5AA69152A1 /* Build configuration list for PBXNativeTarget "Pods-Space GameUITests" */;
+			buildPhases = (
+				8B5A2E2CFA9C303F2B1D143778CB6F57 /* Sources */,
+				CC30B629296E9D17B93F10B821AC2DB6 /* Frameworks */,
+				5DDCFF9EF7F532C66D1376F22A17171E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Space GameUITests";
+			productName = "Pods-Space GameUITests";
+			productReference = 8E5DB6CE284126CC20F9C3C3C347E34B /* Pods_Space_GameUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9A47BAAB0E8471B4C46AE609A883F40D /* Pods-Space Game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC16D18F6AE860FD55575375380644FB /* Build configuration list for PBXNativeTarget "Pods-Space Game" */;
+			buildPhases = (
+				8934FB7A78477786E85715FEE1416CB0 /* Sources */,
+				CFD67038C9EDA403EBFA63BC22E90EBD /* Frameworks */,
+				2A912B3C8F90690BE7617C0DDF1758E7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Space Game";
+			productName = "Pods-Space Game";
+			productReference = 4E4170814922ED3F2FC18C84EAD6DDF5 /* Pods_Space_Game.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = BC75A0B845D6E0082AFDDB28572AECF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A47BAAB0E8471B4C46AE609A883F40D /* Pods-Space Game */,
+				692B50B5CDE3BE932355E4F4AF728C5C /* Pods-Space GameTests */,
+				8B3B0129033B2CD4FDBE9551D6F8736E /* Pods-Space GameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A39A222BA9DBCDF37251DF552754610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BBC5D4C36399AC9A4A4631870BF7533 /* Pods-Space GameTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8934FB7A78477786E85715FEE1416CB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE3133803FBC06ACB21DF03FFC8C1CCD /* Pods-Space Game-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B5A2E2CFA9C303F2B1D143778CB6F57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C1BC858D143D7F37F9E092F7190A298 /* Pods-Space GameUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		15112D847507B7F1E775FBD57620C1CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 688DAEED9DB4ECDEFF7E04E39671A6CE /* Pods-Space GameTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Space GameTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Space GameTests/Pods-Space GameTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Space_GameTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4E805EE1E50C24952647F4E248131A8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 300F155802A1492D92C9A294BD1B759C /* Pods-Space Game.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Space Game/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Space Game/Pods-Space Game.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Space_Game;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6E9A4ADD82CE0EC05DE319B62F32DE6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD2050676128AA5D4EAE822AE18089BA /* Pods-Space GameUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Space GameUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Space GameUITests/Pods-Space GameUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Space_GameUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		74400143CEE701874FB2A07CDB11FAF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D01CBA345AC3A1372676040330D843E /* Pods-Space Game.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Space Game/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Space Game/Pods-Space Game.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Space_Game;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9BFC9E4A7AAD7A607ACE06D95A401A5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B3A59CA9DC125388A4C0B5E978DCEB3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBAF3EDEAD8CCB8299FF8EEF9D33E960 /* Pods-Space GameTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Space GameTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Space GameTests/Pods-Space GameTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Space_GameTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C03B8870130C98D1B02B59D003687524 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FACEA111D8D5241BB6647BC94086DBCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78A69FBD2C088BA40C8D9413FF81CC18 /* Pods-Space GameUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Space GameUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Space GameUITests/Pods-Space GameUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Space_GameUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BFC9E4A7AAD7A607ACE06D95A401A5A /* Debug */,
+				C03B8870130C98D1B02B59D003687524 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64642C6ADBFC44186CC67905DD62D690 /* Build configuration list for PBXNativeTarget "Pods-Space GameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15112D847507B7F1E775FBD57620C1CC /* Debug */,
+				B3A59CA9DC125388A4C0B5E978DCEB3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C357E24CA49D7922B12ACD5AA69152A1 /* Build configuration list for PBXNativeTarget "Pods-Space GameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACEA111D8D5241BB6647BC94086DBCE /* Debug */,
+				6E9A4ADD82CE0EC05DE319B62F32DE6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC16D18F6AE860FD55575375380644FB /* Build configuration list for PBXNativeTarget "Pods-Space Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E805EE1E50C24952647F4E248131A8A /* Debug */,
+				74400143CEE701874FB2A07CDB11FAF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

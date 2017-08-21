@@ -14,12 +14,27 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var currentScoreLabel: UILabel!
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var newHSLabel: UILabel!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var restartButton: UIButton!
+    
+    let Download_URL =  URL(string:  "") //http://onelink.to
     
     var recievedDistance = 0.0
     var recievedLevel = 0
     var newHighScore = false
     var shouldDisplayAd = false
     var interstitialAd: GADInterstitial!
+    
+    private var distHighScore = 0.0
+    
+    @IBAction func shareScore(_ sender: Any) {
+        let shareText = "Bet you can't beat my high score of \(distHighScore) million km!"
+        let shareObjects: [Any] = [shareText, Download_URL]
+        let activityVC = UIActivityViewController(activityItems: shareObjects, applicationActivities: nil)
+        activityVC.excludedActivityTypes = [.airDrop, .postToVimeo, .postToWeibo, .postToFlickr, .assignToContact, .openInIBooks]
+        self.present(activityVC, animated: true, completion: nil)
+
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         if shouldDisplayAd == true {
@@ -31,11 +46,15 @@ class GameOverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let distHighScore = UserDefaults.standard.double(forKey: "highScore")
+        distHighScore = UserDefaults.standard.double(forKey: "highScore")
         setScoreLabels(level: recievedLevel, currentScore: recievedDistance, highScore: distHighScore)
         if newHighScore == true {
             newHSLabel.isHidden = false
         }
+        let buttonImageBoundaries = UIEdgeInsetsMake(7, 7, 7, 7)//resizes share image boundaries
+        
+        shareButton.imageEdgeInsets = buttonImageBoundaries
+        restartButton.imageEdgeInsets = buttonImageBoundaries
     }
     
     override func didReceiveMemoryWarning() {

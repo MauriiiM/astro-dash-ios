@@ -65,7 +65,6 @@ class GameViewController: UIViewController, GADInterstitialDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let gameOverVC = segue.destination as! GameOverViewController
-        print("GOT HERE")
 
         gameOverVC.recievedDistance = distance
         gameOverVC.recievedLevel = level

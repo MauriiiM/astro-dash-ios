@@ -1,0 +1,6 @@
+framework module Pods_Space_Game {
+  umbrella header "Pods-Space Game-umbrella.h"
+
+  export *
+  module * { export * }
+}
