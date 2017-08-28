@@ -19,14 +19,14 @@ enum GameState{
 class GameScene: SKScene, SKPhysicsContactDelegate {
     var parentVC: GameViewController! //assigned in VC
     fileprivate var level = 1
-    fileprivate let levelToFallSpeed: [Int: CGFloat] = [1: -3.00,
-                                                        2: -4.30,
-                                                        3: -4.05,
-                                                        4: -4.00,
-                                                        5: -4.40,
-                                                        6: -4.05,
-                                                        7: -4.40,
-                                                        8: -4.65]
+    fileprivate let levelToFallSpeed: [Int: CGFloat] = [1: -2.85,
+                                                        2: -4.15,
+                                                        3: -3.90,
+                                                        4: -3.85,
+                                                        5: -4.25,
+                                                        6: -3.90,
+                                                        7: -4.25,
+                                                        8: -4.5]
     fileprivate var hasBeenCreated = false
     fileprivate var readyTopLabel = SKLabelNode(fontNamed: "04b_19")
     fileprivate var readyBottomLabel = SKLabelNode(fontNamed: "04b_19")
@@ -62,7 +62,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             let panVelocity = recognizer.velocity(in: self.view)
             //            if (abs(panVelocity.x/3.7) < 1000) {
-            playerSprite.panVelocity = panVelocity.x/60
+            playerSprite.panVelocity = panVelocity.x/85
         }
     }
     
@@ -172,7 +172,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         distLabel.position = CGPoint(x: 0, y: size.height - distLabel.fontSize)
     }
     
-    //@TODO possibly just calls this once per update, not 3 times (once per asteroid) and make it a void func
     fileprivate func setLevel(){
         if (distTravelled < 5) { //Mars
             level = 1;
@@ -254,7 +253,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Automatically called ONCE when scene gets initialized
     override func didMove(to view: SKView) {
         self.physicsWorld.contactDelegate = self;
-        asteroidSpawnGap = self.frame.height * 0.33
+        asteroidSpawnGap = self.frame.height * 0.36
         if(!self.hasBeenCreated){
             setAssets()
             addAssets()

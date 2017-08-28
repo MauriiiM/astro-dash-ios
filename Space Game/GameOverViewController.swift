@@ -17,7 +17,7 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
     
-    let Download_URL =  URL(string:  "") //http://onelink.to
+    let Download_URL =  URL(string: "http://onelink.to") //http://onelink.to
     
     var recievedDistance = 0.0
     var recievedLevel = 0
@@ -27,11 +27,14 @@ class GameOverViewController: UIViewController {
     
     private var distHighScore = 0.0
     
+    //https://stackoverflow.com/questions/40191377/uiactivitycontroller-to-share-url-file
+    //https://stackoverflow.com/questions/35931946/basic-example-for-sharing-text-or-image-with-uiactivityviewcontroller-in-swift
     @IBAction func shareScore(_ sender: Any) {
-        let shareText = "Bet you can't beat my high score of \(distHighScore) million km!"
-        let shareObjects: [Any] = [shareText, Download_URL]
-        let activityVC = UIActivityViewController(activityItems: shareObjects, applicationActivities: nil)
-        activityVC.excludedActivityTypes = [.airDrop, .postToVimeo, .postToWeibo, .postToFlickr, .assignToContact, .openInIBooks]
+        let shareText = "Bet you can't beat my high score of \(String.localizedStringWithFormat("%.2f %@", distHighScore, "")) million km!"
+        let shareItems: [Any] = [shareText, Download_URL!]
+        let activityVC = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+        activityVC.excludedActivityTypes = [.airDrop, .postToVimeo, .postToWeibo, .postToFlickr,
+                                            .assignToContact, .openInIBooks, .openInIBooks, .print]
         self.present(activityVC, animated: true, completion: nil)
 
     }

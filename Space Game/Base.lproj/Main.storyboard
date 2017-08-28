@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134.78260869565219" y="126.35869565217392"/>
+            <point key="canvasLocation" x="133" y="218"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="reH-ip-ctj">
@@ -228,7 +228,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="clip" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="Q9w-cV-a0U" userLabel="Current Score">
-                                <rect key="frame" x="222" y="325" width="77" height="39"/>
+                                <rect key="frame" x="223" y="325" width="76" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Q9w-cV-a0U" secondAttribute="height" multiplier="2:1" id="P18-V9-W3E"/>
                                 </constraints>

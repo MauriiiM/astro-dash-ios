@@ -32,7 +32,7 @@ class GameViewController: UIViewController, GADInterstitialDelegate {
             }
     }
     
-    fileprivate let Games_Per_Ad = 3
+    fileprivate let Games_Per_Ad: Int = 4
     fileprivate let Interstitial_Unit_ID = "ca-app-pub-7302144786652924/7167894184"
     fileprivate let Interstitial_Test_ID = "ca-app-pub-3940256099942544/1033173712"
     fileprivate var interstitialAd: GADInterstitial!
@@ -43,7 +43,8 @@ class GameViewController: UIViewController, GADInterstitialDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+        skView = self.view as! SKView
         if (Assets.DEBUG == true)
         {
             Assets.loadMenuAssets()
@@ -53,8 +54,6 @@ class GameViewController: UIViewController, GADInterstitialDelegate {
             skView.showsNodeCount = true
             print("DEBUG = ON (from GameVC viewDidLoad()")
         }
-
-        skView = self.view as! SKView
         createGame()
     }
     
@@ -131,8 +130,9 @@ class GameViewController: UIViewController, GADInterstitialDelegate {
     fileprivate func loadInterstitialAd(){
         let request = GADRequest()
         //@TODO REMOVE LINE BELOW BEFORE RELEASE
-        request.testDevices = [kGADSimulatorID]//used when testing from mac simulato
-        interstitialAd = GADInterstitial(adUnitID: Interstitial_Test_ID)
+        request.testDevices = [kGADSimulatorID, "1215b0081f040a9d0e3c7300c976c50a",
+                               "a67557c4b364f2906dc04b58b95b0afe"]//used when testing from mac simulato
+        interstitialAd = GADInterstitial(adUnitID: Interstitial_Unit_ID)
         interstitialAd.delegate = self
         interstitialAd.load(request)
     }

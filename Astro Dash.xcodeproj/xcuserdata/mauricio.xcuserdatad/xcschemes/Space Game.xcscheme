@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22EE2EE01DDC0D98003188BD"
-               BuildableName = "Space Game.app"
-               BlueprintName = "Space Game"
-               ReferencedContainer = "container:Space Game.xcodeproj">
+               BuildableName = "Astro Dash.app"
+               BlueprintName = "Astro Dash"
+               ReferencedContainer = "container:Astro Dash.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22EE2EFA1DDC0D99003188BD"
-               BuildableName = "Space GameTests.xctest"
-               BlueprintName = "Space GameTests"
-               ReferencedContainer = "container:Space Game.xcodeproj">
+               BuildableName = "Astro DashTests.xctest"
+               BlueprintName = "Astro DashTests"
+               ReferencedContainer = "container:Astro Dash.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22EE2F051DDC0D99003188BD"
-               BuildableName = "Space GameUITests.xctest"
-               BlueprintName = "Space GameUITests"
-               ReferencedContainer = "container:Space Game.xcodeproj">
+               BuildableName = "Astro DashUITests.xctest"
+               BlueprintName = "Astro DashUITests"
+               ReferencedContainer = "container:Astro Dash.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22EE2EE01DDC0D98003188BD"
-            BuildableName = "Space Game.app"
-            BlueprintName = "Space Game"
-            ReferencedContainer = "container:Space Game.xcodeproj">
+            BuildableName = "Astro Dash.app"
+            BlueprintName = "Astro Dash"
+            ReferencedContainer = "container:Astro Dash.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22EE2EE01DDC0D98003188BD"
-            BuildableName = "Space Game.app"
-            BlueprintName = "Space Game"
-            ReferencedContainer = "container:Space Game.xcodeproj">
+            BuildableName = "Astro Dash.app"
+            BlueprintName = "Astro Dash"
+            ReferencedContainer = "container:Astro Dash.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22EE2EE01DDC0D98003188BD"
-            BuildableName = "Space Game.app"
-            BlueprintName = "Space Game"
-            ReferencedContainer = "container:Space Game.xcodeproj">
+            BuildableName = "Astro Dash.app"
+            BlueprintName = "Astro Dash"
+            ReferencedContainer = "container:Astro Dash.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

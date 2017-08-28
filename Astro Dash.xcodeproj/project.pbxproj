@@ -59,16 +59,16 @@
 		2276447E1ED40B4E00A4230B /* about.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = about.gif; sourceTree = "<group>"; };
 		22CAF7251E8E51400024C89B /* FallingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FallingNode.swift; sourceTree = "<group>"; };
 		22E432861E20B37E00E22BF4 /* PlayerSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerSprite.swift; sourceTree = "<group>"; };
-		22EE2EE11DDC0D99003188BD /* Space Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22EE2EE11DDC0D99003188BD /* Astro Dash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astro Dash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EE2EE41DDC0D99003188BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22EE2EEC1DDC0D99003188BD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		22EE2EEF1DDC0D99003188BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22EE2EF11DDC0D99003188BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22EE2EF61DDC0D99003188BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22EE2EFB1DDC0D99003188BD /* Space GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22EE2EFB1DDC0D99003188BD /* Astro DashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Astro DashTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EE2EFF1DDC0D99003188BD /* Space_GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space_GameTests.swift; sourceTree = "<group>"; };
 		22EE2F011DDC0D99003188BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22EE2F061DDC0D99003188BD /* Space GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22EE2F061DDC0D99003188BD /* Astro DashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Astro DashUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EE2F0A1DDC0D99003188BD /* Space_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space_GameUITests.swift; sourceTree = "<group>"; };
 		22EE2F0C1DDC0D99003188BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		282366C8B0D2E462FA6DFA6A /* Pods-Space GameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Space GameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Space GameUITests/Pods-Space GameUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +122,7 @@
 		2248806C1E17A64B003E732E /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				226A97B21E1DDF6A0096515A /* Assets.swift */,
 				22EE2EE41DDC0D99003188BD /* AppDelegate.swift */,
 				22EE2EF61DDC0D99003188BD /* Info.plist */,
 			);
@@ -141,7 +142,6 @@
 			children = (
 				224C5A491F305D1A00A0C9CC /* sounds */,
 				2299E7371ECFE46300711E46 /* fonts */,
-				226A97B21E1DDF6A0096515A /* Assets.swift */,
 				22EE2EF11DDC0D99003188BD /* Assets.xcassets */,
 			);
 			name = resources;
@@ -204,7 +204,7 @@
 		22EE2ED81DDC0D98003188BD = {
 			isa = PBXGroup;
 			children = (
-				22EE2EE31DDC0D99003188BD /* Space Game */,
+				22EE2EE31DDC0D99003188BD /* Astro Dash */,
 				22EE2EFE1DDC0D99003188BD /* Space GameTests */,
 				22EE2F091DDC0D99003188BD /* Space GameUITests */,
 				22EE2EE21DDC0D99003188BD /* Products */,
@@ -216,14 +216,14 @@
 		22EE2EE21DDC0D99003188BD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22EE2EE11DDC0D99003188BD /* Space Game.app */,
-				22EE2EFB1DDC0D99003188BD /* Space GameTests.xctest */,
-				22EE2F061DDC0D99003188BD /* Space GameUITests.xctest */,
+				22EE2EE11DDC0D99003188BD /* Astro Dash.app */,
+				22EE2EFB1DDC0D99003188BD /* Astro DashTests.xctest */,
+				22EE2F061DDC0D99003188BD /* Astro DashUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		22EE2EE31DDC0D99003188BD /* Space Game */ = {
+		22EE2EE31DDC0D99003188BD /* Astro Dash */ = {
 			isa = PBXGroup;
 			children = (
 				22EE2EEE1DDC0D99003188BD /* Main.storyboard */,
@@ -234,6 +234,7 @@
 				22D45E581E0239D70092C5FD /* gameoverview */,
 				2248806C1E17A64B003E732E /* supporting files */,
 			);
+			name = "Astro Dash";
 			path = "Space Game";
 			sourceTree = "<group>";
 		};
@@ -271,9 +272,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22EE2EE01DDC0D98003188BD /* Space Game */ = {
+		22EE2EE01DDC0D98003188BD /* Astro Dash */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22EE2F0F1DDC0D99003188BD /* Build configuration list for PBXNativeTarget "Space Game" */;
+			buildConfigurationList = 22EE2F0F1DDC0D99003188BD /* Build configuration list for PBXNativeTarget "Astro Dash" */;
 			buildPhases = (
 				5DD7250FC7BE83B5F9D2DB5F /* [CP] Check Pods Manifest.lock */,
 				22EE2EDD1DDC0D98003188BD /* Sources */,
@@ -286,14 +287,14 @@
 			);
 			dependencies = (
 			);
-			name = "Space Game";
+			name = "Astro Dash";
 			productName = "Space Game";
-			productReference = 22EE2EE11DDC0D99003188BD /* Space Game.app */;
+			productReference = 22EE2EE11DDC0D99003188BD /* Astro Dash.app */;
 			productType = "com.apple.product-type.application";
 		};
-		22EE2EFA1DDC0D99003188BD /* Space GameTests */ = {
+		22EE2EFA1DDC0D99003188BD /* Astro DashTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22EE2F121DDC0D99003188BD /* Build configuration list for PBXNativeTarget "Space GameTests" */;
+			buildConfigurationList = 22EE2F121DDC0D99003188BD /* Build configuration list for PBXNativeTarget "Astro DashTests" */;
 			buildPhases = (
 				7AF5E2A944489B325067ED4E /* [CP] Check Pods Manifest.lock */,
 				22EE2EF71DDC0D99003188BD /* Sources */,
@@ -307,14 +308,14 @@
 			dependencies = (
 				22EE2EFD1DDC0D99003188BD /* PBXTargetDependency */,
 			);
-			name = "Space GameTests";
+			name = "Astro DashTests";
 			productName = "Space GameTests";
-			productReference = 22EE2EFB1DDC0D99003188BD /* Space GameTests.xctest */;
+			productReference = 22EE2EFB1DDC0D99003188BD /* Astro DashTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		22EE2F051DDC0D99003188BD /* Space GameUITests */ = {
+		22EE2F051DDC0D99003188BD /* Astro DashUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22EE2F151DDC0D99003188BD /* Build configuration list for PBXNativeTarget "Space GameUITests" */;
+			buildConfigurationList = 22EE2F151DDC0D99003188BD /* Build configuration list for PBXNativeTarget "Astro DashUITests" */;
 			buildPhases = (
 				D549D4B599C3DC8E91E5D89A /* [CP] Check Pods Manifest.lock */,
 				22EE2F021DDC0D99003188BD /* Sources */,
@@ -328,9 +329,9 @@
 			dependencies = (
 				22EE2F081DDC0D99003188BD /* PBXTargetDependency */,
 			);
-			name = "Space GameUITests";
+			name = "Astro DashUITests";
 			productName = "Space GameUITests";
-			productReference = 22EE2F061DDC0D99003188BD /* Space GameUITests.xctest */;
+			productReference = 22EE2F061DDC0D99003188BD /* Astro DashUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -373,7 +374,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 22EE2EDC1DDC0D98003188BD /* Build configuration list for PBXProject "Space Game" */;
+			buildConfigurationList = 22EE2EDC1DDC0D98003188BD /* Build configuration list for PBXProject "Astro Dash" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -386,9 +387,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22EE2EE01DDC0D98003188BD /* Space Game */,
-				22EE2EFA1DDC0D99003188BD /* Space GameTests */,
-				22EE2F051DDC0D99003188BD /* Space GameUITests */,
+				22EE2EE01DDC0D98003188BD /* Astro Dash */,
+				22EE2EFA1DDC0D99003188BD /* Astro DashTests */,
+				22EE2F051DDC0D99003188BD /* Astro DashUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -608,12 +609,12 @@
 /* Begin PBXTargetDependency section */
 		22EE2EFD1DDC0D99003188BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 22EE2EE01DDC0D98003188BD /* Space Game */;
+			target = 22EE2EE01DDC0D98003188BD /* Astro Dash */;
 			targetProxy = 22EE2EFC1DDC0D99003188BD /* PBXContainerItemProxy */;
 		};
 		22EE2F081DDC0D99003188BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 22EE2EE01DDC0D98003188BD /* Space Game */;
+			target = 22EE2EE01DDC0D98003188BD /* Astro Dash */;
 			targetProxy = 22EE2F071DDC0D99003188BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -735,7 +736,7 @@
 				INFOPLIST_FILE = "Space Game/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mhm.Space-Game";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mmonsivais.Space-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -751,7 +752,7 @@
 				INFOPLIST_FILE = "Space Game/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mhm.Space-Game";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mmonsivais.Space-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -770,7 +771,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mhm.Space-GameTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Space Game.app/Space Game";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Astro Dash.app/Astro Dash";
 			};
 			name = Debug;
 		};
@@ -786,7 +787,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mhm.Space-GameTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Space Game.app/Space Game";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Astro Dash.app/Astro Dash";
 			};
 			name = Release;
 		};
@@ -823,7 +824,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22EE2EDC1DDC0D98003188BD /* Build configuration list for PBXProject "Space Game" */ = {
+		22EE2EDC1DDC0D98003188BD /* Build configuration list for PBXProject "Astro Dash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22EE2F0D1DDC0D99003188BD /* Debug */,
@@ -832,7 +833,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22EE2F0F1DDC0D99003188BD /* Build configuration list for PBXNativeTarget "Space Game" */ = {
+		22EE2F0F1DDC0D99003188BD /* Build configuration list for PBXNativeTarget "Astro Dash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22EE2F101DDC0D99003188BD /* Debug */,
@@ -841,7 +842,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22EE2F121DDC0D99003188BD /* Build configuration list for PBXNativeTarget "Space GameTests" */ = {
+		22EE2F121DDC0D99003188BD /* Build configuration list for PBXNativeTarget "Astro DashTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22EE2F131DDC0D99003188BD /* Debug */,
@@ -850,7 +851,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22EE2F151DDC0D99003188BD /* Build configuration list for PBXNativeTarget "Space GameUITests" */ = {
+		22EE2F151DDC0D99003188BD /* Build configuration list for PBXNativeTarget "Astro DashUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22EE2F161DDC0D99003188BD /* Debug */,

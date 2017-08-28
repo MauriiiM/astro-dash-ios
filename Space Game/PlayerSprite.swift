@@ -22,7 +22,7 @@ class PlayerSprite: SKSpriteNode {
         
         position = CGPoint(x: spawnPosition.x, y: spawnPosition.y)
         
-        physicsBody = SKPhysicsBody(circleOfRadius: max(size.width / 2, size.height / 2))
+        physicsBody = SKPhysicsBody(texture: texture!, size: size)
         physicsBody!.isDynamic = false
         physicsBody!.affectedByGravity = false
         physicsBody!.categoryBitMask = PlayerSprite.playerBitMask
